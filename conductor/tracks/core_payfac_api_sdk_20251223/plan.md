@@ -2,10 +2,10 @@
 
 ## Phase 1: API Infrastructure & Usage Ingestion
 - [x] Task: Define API directory structure and base response types. [33e0d1b]
-- [ ] Task: Implement API Key validation middleware/utility.
-- [ ] Task: Create Usage Ingestion endpoint (`/api/v1/usage`).
-- [ ] Task: Write unit tests for usage ingestion and validation.
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: API Infrastructure & Usage Ingestion' (Protocol in workflow.md)
+- [x] Task: Implement API Key validation middleware/utility. [b31d87d]
+- [x] Task: Create Usage Ingestion endpoint (`/api/v1/usage`). [321869b]
+- [x] Task: Write unit tests for usage ingestion and validation. [321869b]
+- [x] Task: Conductor - User Manual Verification 'Phase 1: API Infrastructure & Usage Ingestion' (Protocol in workflow.md) [checkpoint: 2a92d96]
 
 ## Phase 2: Customer & Billing APIs
 - [ ] Task: Implement Customer API endpoints (`/api/v1/customers`).
