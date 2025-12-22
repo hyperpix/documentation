@@ -4,5 +4,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-## [ ] Track: Develop Core PayFac API & SDK
+## [~] Track: Develop Core PayFac API & SDK
 *Link: [./conductor/tracks/core_payfac_api_sdk_20251223/](./conductor/tracks/core_payfac_api_sdk_20251223/)*

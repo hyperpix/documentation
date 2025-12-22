@@ -1,7 +1,7 @@
 # Plan: Core PayFac API & SDK
 
 ## Phase 1: API Infrastructure & Usage Ingestion
-- [ ] Task: Define API directory structure and base response types.
+- [x] Task: Define API directory structure and base response types. [33e0d1b]
 - [ ] Task: Implement API Key validation middleware/utility.
 - [ ] Task: Create Usage Ingestion endpoint (`/api/v1/usage`).
 - [ ] Task: Write unit tests for usage ingestion and validation.

@@ -21,3 +21,4 @@
 # Infrastructure
 - **Package Manager:** pnpm
 - **Development Tools:** ESLint, Prettier
+- **Testing:** Vitest
