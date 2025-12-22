@@ -11,10 +11,19 @@
 - [x] Task: Implement Customer API endpoints (`/api/v1/customers`). [a96dc5c]
 - [x] Task: Implement Billing/Invoice retrieval endpoints (`/api/v1/invoices`). [01c323d]
 - [x] Task: Write integration tests for customer and billing flows. [df994ad]
+- [ ] Task: Implement Entitlements/Usage Check endpoint (`/api/v1/entitlements`).
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Customer & Billing APIs' (Protocol in workflow.md)
 
-## Phase 3: SDK Development
+## Phase 3: Server-Side SDK Development
 - [ ] Task: Scaffold the TypeScript SDK structure.
 - [ ] Task: Implement SDK methods for usage reporting, customer management, and billing.
+- [ ] Task: Implement SDK method for entitlement/usage checking.
 - [ ] Task: Create a sample integration script using the SDK.
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: SDK Development' (Protocol in workflow.md)
+
+## Phase 4: Checkout Infrastructure & Client SDK
+- [ ] Task: Implement Checkout Session API (`/api/v1/checkout/sessions`).
+- [ ] Task: Scaffold Client-Side SDK (checkout.js / React components).
+- [ ] Task: Implement `createCheckoutSession` and frontend mounting logic.
+- [ ] Task: Build Custom Checkout UI components (Payment Element).
+- [ ] Task: Conductor - User Manual Verification 'Phase 4: Checkout Infrastructure' (Protocol in workflow.md)
