@@ -10,7 +10,7 @@
 ## Phase 2: Customer & Billing APIs
 - [x] Task: Implement Customer API endpoints (`/api/v1/customers`). [a96dc5c]
 - [x] Task: Implement Billing/Invoice retrieval endpoints (`/api/v1/invoices`). [01c323d]
-- [ ] Task: Write integration tests for customer and billing flows.
+- [x] Task: Write integration tests for customer and billing flows. [df994ad]
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Customer & Billing APIs' (Protocol in workflow.md)
 
 ## Phase 3: SDK Development
