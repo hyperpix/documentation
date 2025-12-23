@@ -24,6 +24,6 @@
 ## Phase 4: Checkout Infrastructure & Client SDK
 - [x] Task: Implement Checkout Session API (`/api/v1/checkout/sessions`). [3c0d0e1]
 - [x] Task: Scaffold Client-Side SDK (checkout.js / React components). [556de58]
-- [ ] Task: Implement `createCheckoutSession` and frontend mounting logic.
+- [x] Task: Implement `createCheckoutSession` and frontend mounting logic. [d4798de]
 - [ ] Task: Build Custom Checkout UI components (Payment Element).
 - [ ] Task: Conductor - User Manual Verification 'Phase 4: Checkout Infrastructure' (Protocol in workflow.md)
