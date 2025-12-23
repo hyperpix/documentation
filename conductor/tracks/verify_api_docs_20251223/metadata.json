@@ -1,8 +1,0 @@
-{
-  "track_id": "verify_api_docs_20251223",
-  "type": "chore",
-  "status": "new",
-  "created_at": "2025-12-24T02:03:00Z",
-  "updated_at": "2025-12-24T02:03:00Z",
-  "description": "Verify all public API endpoints with Secret Key authentication via automated tests and overhaul the API documentation to match code reality."
-}

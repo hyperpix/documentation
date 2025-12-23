@@ -7,7 +7,7 @@ description: "Manage customer invoices and billing history."
 Retrieve all invoices for your merchant.
 
 ```bash
-curl -X GET https://sandbox.montra.fi/api/v1/invoices \
+curl -X GET https://dev.montra.fi/api/v1/invoices \
   -H "Authorization: Bearer <your_api_key>"
 ```
 
@@ -15,7 +15,7 @@ curl -X GET https://sandbox.montra.fi/api/v1/invoices \
 Create a manual invoice for a customer.
 
 ```bash
-curl -X POST https://sandbox.montra.fi/api/v1/invoices \
+curl -X POST https://dev.montra.fi/api/v1/invoices \
   -H "Authorization: Bearer <your_api_key>" \
   -H "Content-Type: application/json" \
   -d '{

@@ -7,7 +7,7 @@ description: "Manage products and their pricing structures."
 Retrieve all products for your merchant.
 
 ```bash
-curl -X GET https://sandbox.montra.fi/api/v1/products \
+curl -X GET https://dev.montra.fi/api/v1/products \
   -H "Authorization: Bearer <your_api_key>"
 ```
 
@@ -20,7 +20,7 @@ curl -X GET https://sandbox.montra.fi/api/v1/products \
 Create a new product within a pricing model.
 
 ```bash
-curl -X POST https://sandbox.montra.fi/api/v1/products \
+curl -X POST https://dev.montra.fi/api/v1/products \
   -H "Authorization: Bearer <your_api_key>" \
   -H "Content-Type: application/json" \
   -d '{ 

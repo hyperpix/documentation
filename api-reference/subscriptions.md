@@ -7,7 +7,7 @@ description: "Manage recurring billing relationships for your customers."
 Retrieve a list of all subscriptions for your merchant.
 
 ```bash
-curl -X GET https://sandbox.montra.fi/api/v1/subscriptions \
+curl -X GET https://dev.montra.fi/api/v1/subscriptions \
   -H "Authorization: Bearer <your_api_key>"
 ```
 

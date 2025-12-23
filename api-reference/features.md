@@ -7,7 +7,7 @@ description: "Manage merchant features and their statuses."
 Retrieve a list of all features defined for your merchant.
 
 ```bash
-curl -X GET https://sandbox.montra.fi/api/v1/features \
+curl -X GET https://dev.montra.fi/api/v1/features \
   -H "Authorization: Bearer <your_api_key>"
 ```
 
@@ -33,7 +33,7 @@ curl -X GET https://sandbox.montra.fi/api/v1/features \
 Create a new feature toggle or meter.
 
 ```bash
-curl -X POST https://sandbox.montra.fi/api/v1/features \
+curl -X POST https://dev.montra.fi/api/v1/features \
   -H "Authorization: Bearer <your_api_key>" \
   -H "Content-Type: application/json" \
   -d '{ 
@@ -48,7 +48,7 @@ curl -X POST https://sandbox.montra.fi/api/v1/features \
 Update an existing feature's details.
 
 ```bash
-curl -X PATCH https://sandbox.montra.fi/api/v1/features/feat_123 \
+curl -X PATCH https://dev.montra.fi/api/v1/features/feat_123 \
   -H "Authorization: Bearer <your_api_key>" \
   -H "Content-Type: application/json" \
   -d '{ 
@@ -60,6 +60,6 @@ curl -X PATCH https://sandbox.montra.fi/api/v1/features/feat_123 \
 Permanently delete a feature.
 
 ```bash
-curl -X DELETE https://sandbox.montra.fi/api/v1/features/feat_123 \
+curl -X DELETE https://dev.montra.fi/api/v1/features/feat_123 \
   -H "Authorization: Bearer <your_api_key>"
 ```
