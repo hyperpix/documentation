@@ -7,7 +7,7 @@ description: "Process transaction reversals and manage refunds."
 Issue a full or partial refund for a successful transaction.
 
 ```bash
-curl -X POST https://api.montra.fi/v1/refunds \
+curl -X POST https://sandbox.montra.fi/api/v1/refunds \
   -H "Authorization: Bearer <your_api_key>" \
   -H "Content-Type: application/json" \
   -d '{

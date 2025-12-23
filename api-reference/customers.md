@@ -7,7 +7,7 @@ description: "Manage your customers and their billing profiles."
 Retrieve all customers for your merchant.
 
 ```bash
-curl -X GET https://api.montra.fi/v1/customers \
+curl -X GET https://sandbox.montra.fi/api/v1/customers \
   -H "Authorization: Bearer <your_api_key>"
 ```
 
@@ -15,7 +15,7 @@ curl -X GET https://api.montra.fi/v1/customers \
 Create a new customer profile.
 
 ```bash
-curl -X POST https://api.montra.fi/v1/customers \
+curl -X POST https://sandbox.montra.fi/api/v1/customers \
   -H "Authorization: Bearer <your_api_key>" \
   -H "Content-Type: application/json" \
   -d '{

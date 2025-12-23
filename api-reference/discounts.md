@@ -7,7 +7,7 @@ description: "Manage promotional codes and coupons."
 Create a new discount code for your checkout flows.
 
 ```bash
-curl -X POST https://api.montra.fi/v1/discounts \
+curl -X POST https://sandbox.montra.fi/api/v1/discounts \
   -H "Authorization: Bearer <your_api_key>" \
   -H "Content-Type: application/json" \
   -d '{

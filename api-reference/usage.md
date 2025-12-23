@@ -7,7 +7,7 @@ description: "Report usage events for customers."
 Send usage events to Montra to track consumption against meters.
 
 ```bash
-curl -X POST https://api.montra.fi/v1/usage \
+curl -X POST https://sandbox.montra.fi/api/v1/usage \
   -H "Authorization: Bearer <your_api_key>" \
   -H "Content-Type: application/json" \
   -d '{

@@ -54,6 +54,8 @@
       "group": "API Reference",
       "pages": [
         "api-reference/customers",
+        "api-reference/products",
+        "api-reference/invoices",
         "api-reference/subscriptions",
         "api-reference/usage",
         "api-reference/features",

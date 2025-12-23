@@ -10,7 +10,7 @@ Verify if a customer has access to a specific meter or feature toggle.
 Check if a customer has remaining quota for a meter.
 
 ```bash
-curl -X GET "https://api.montra.fi/v1/entitlements?customer_id=cust_123&meter=api-tokens" \
+curl -X GET "https://sandbox.montra.fi/api/v1/entitlements?customer_id=cust_123&meter=api-tokens" \
   -H "Authorization: Bearer <your_api_key>"
 ```
 
@@ -18,7 +18,7 @@ curl -X GET "https://api.montra.fi/v1/entitlements?customer_id=cust_123&meter=ap
 Check if a feature toggle is enabled for the customer's current plan.
 
 ```bash
-curl -X GET "https://api.montra.fi/v1/entitlements?customer_id=cust_123&feature=sso" \
+curl -X GET "https://sandbox.montra.fi/api/v1/entitlements?customer_id=cust_123&feature=sso" \
   -H "Authorization: Bearer <your_api_key>"
 ```
 

@@ -7,7 +7,7 @@ description: "Generate shareable payment links programmatically."
 Create a new payment link that can be shared with customers.
 
 ```bash
-curl -X POST https://api.montra.fi/v1/checkout-links \
+curl -X POST https://sandbox.montra.fi/api/v1/checkout-links \
   -H "Authorization: Bearer <your_api_key>" \
   -H "Content-Type: application/json" \
   -d '{
