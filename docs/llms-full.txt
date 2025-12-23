@@ -2,7 +2,7 @@
 This document provides a comprehensive overview of the Montra API, designed for both developers and AI agents.
 
 ## Base URL
-The API is available at `https://api.montra.fi/v1`
+The API is available at `https://dev.montra.fi/api/v1`
 
 ## Authentication
 All API requests must include an API key in the `Authorization` header as a Bearer token.

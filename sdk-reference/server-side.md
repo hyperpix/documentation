@@ -12,7 +12,7 @@ import { Montra } from '@montra/sdk';
 
 const montra = new Montra({
   apiKey: 'sk_test_...',
-  baseUrl: 'https://api.montra.fi/v1' // Optional
+  baseUrl: 'https://dev.montra.fi/api/v1' // Optional
 });
 ```
 
