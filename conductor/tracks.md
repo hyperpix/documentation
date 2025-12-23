@@ -9,5 +9,5 @@
 *Link: [./conductor/tracks/fix_pnpm_lockfile_20251223/](./conductor/tracks/fix_pnpm_lockfile_20251223/)*
 ---
 
-## [~] Track: Verify API Docs
+## [x] Track: Verify API Docs
 *Link: [./conductor/tracks/verify_api_docs_20251223/](./conductor/tracks/verify_api_docs_20251223/)*
