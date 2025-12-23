@@ -1,0 +1,60 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Montra",
+  "logo": {
+    "light": "/logo.png",
+    "dark": "/logo.png"
+  },
+  "favicon": "/favicon.png",
+  "colors": {
+    "primary": "#000000",
+    "light": "#555555",
+    "dark": "#000000",
+    "anchors": {
+      "from": "#000000",
+      "to": "#555555"
+    }
+  },
+  "topbarLinks": [
+    {
+      "name": "Support",
+      "url": "mailto:support@montra.fi"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Dashboard",
+    "url": "https://dashboard.montra.fi"
+  },
+  "tabs": [
+    {
+      "name": "SDK Guides",
+      "item": "sdk-reference"
+    },
+    {
+      "name": "API Reference",
+      "item": "api-reference"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Getting Started",
+      "pages": [
+        "introduction",
+        "quickstart"
+      ]
+    },
+    {
+      "group": "SDK Reference",
+      "pages": [
+        "sdk-reference/installation",
+        "sdk-reference/server-side",
+        "sdk-reference/react-nextjs",
+        "sdk-reference/express"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "twitter": "https://twitter.com/montra",
+    "github": "https://github.com/montra"
+  }
+}
