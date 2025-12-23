@@ -18,7 +18,7 @@ Goal: Enhance navigation and loading feedback for Invoices and Recurring payment
 ## Phase 2: Performance & Data Fetching Optimization
 Goal: Achieve "instant" perceived loading for metadata and core organization settings.
 
-- [x] Task: Optimize Pricing Model Page Fetching (79ef52e)
+- [x] Task: Optimize Pricing Model Page Fetching (cd95fe3)
     - [ ] Analyze the current data fetching strategy for `PricingModelDetailsClient`.
     - [ ] Identify if the pricing model name can be passed via URL/state or fetched separately and faster.
     - [ ] Minimize the loading state for the page header to improve perceived speed.
