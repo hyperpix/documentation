@@ -15,23 +15,12 @@ Goal: Ensure all API endpoints work as expected with Secret Key authentication.
     - [x] Ensure `POST` handlers are correctly exported and `options` methods handle CORS if necessary (though usually handled by middleware).
 - [~] Task: Conductor - User Manual Verification 'Phase 1: API Verification Suite' (Protocol in workflow.md)
 
-## Phase 2: Documentation Audit & Update
+## Phase 2: Documentation Audit & Update [32b22e4]
 Goal: Align `api-reference/` documentation with the verified code.
 
-- [ ] Task: Audit & Update Customer Docs
-    - [ ] Check `api-reference/customers.md`.
-    - [ ] Ensure request body fields match `CustomerPayloadSchema`.
-    - [ ] Add/Update response examples.
-- [ ] Task: Audit & Update Product/Pricing Docs
-    - [ ] Check/Create `api-reference/products.md` and `pricing-models.md`.
-    - [ ] Document the implicit relationship between Products and Pricing Models if needed.
-- [ ] Task: Audit & Update Payment Link Docs
-    - [ ] Check `api-reference/payment-links.md` (or `checkout-links.md`).
-    - [ ] Confirm `POST` /api/v1/checkout-links parameters.
-- [ ] Task: Audit & Update Invoice Docs
-    - [ ] Check `api-reference/invoices.md`.
-    - [ ] Verify `POST` parameters (customer_id, amount_due, items).
-- [ ] Task: Add Missing Endpoints
-    - [ ] Scan `app/api/v1` for any undocumented routes (e.g., `features`, `entitlements`, `refunds`).
-    - [ ] Create new MDX files in `api-reference/` for them.
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Documentation Audit & Update' (Protocol in workflow.md)
+- [x] Task: Audit & Update Customer Docs
+- [x] Task: Audit & Update Product/Pricing Docs
+- [x] Task: Audit & Update Payment Link Docs
+- [x] Task: Audit & Update Invoice Docs
+- [x] Task: Add Missing Endpoints
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Documentation Audit & Update' (Protocol in workflow.md)
