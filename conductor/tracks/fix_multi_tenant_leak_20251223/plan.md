@@ -21,22 +21,9 @@ Goal: Ensure complete isolation between merchants and secure public access.
 ## Phase 2: Bug Fixes & Navigation
 Goal: Restore core functionality to the dashboard.
 
-- [ ] Task: Fix Invoice Detail Navigation
-    - [ ] Identify why clicking an invoice doesn't open the detail view (Check routing and API response).
-    - [ ] Fix the navigation trigger or the detail route authorization.
-    - [ ] Verify owner can view their own invoice details.
-- [ ] Task: Restore "Create Invoice" Button
-    - [ ] Update `app/invoices/page.tsx` to include the "Create Invoice" button in the `PageListTemplate` action prop.
-    - [ ] Ensure it links correctly to `/invoices/new`.
-- [ ] Task: Fix Transactions Page Loading
-    - [ ] Debug the transactions fetch error (likely an RLS or schema mismatch).
-    - [ ] Ensure the UI handles loading/empty/error states correctly.
-    - [ ] Verify the Transactions page loads only the current merchant's data.
-- [ ] Task: Optimize Settings Page Load
-    - [ ] Profile the Settings page data fetching (API calls, Supabase queries).
-    - [ ] Identify and resolve bottlenecks (e.g., N+1 queries, unoptimized RLS, missing indexes).
-- [ ] Task: Fix Onboarding Dropdown Scrollbar Shift
-    - [ ] Identify components using scroll-locking (Radix UI/Shadcn).
-    - [ ] Apply global CSS or component-level fix to prevent layout shift when scrollbar is hidden.
-    - [ ] Verify scroll behavior on multiple browsers/devices.
+- [x] Task: Fix Invoice Detail Navigation (f9f45a0)
+- [x] Task: Restore "Create Invoice" Button (f9f45a0)
+- [x] Task: Fix Transactions Page Loading (f9f45a0)
+- [x] Task: Optimize Settings Page Load (f9f45a0)
+- [x] Task: Fix Onboarding Dropdown Scrollbar Shift (f9f45a0)
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Bug Fixes, Navigation & UI' (Protocol in workflow.md)
