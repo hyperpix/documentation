@@ -27,4 +27,4 @@ Goal: Achieve "instant" perceived loading for metadata and core organization set
 - [x] Task: Implement Skeletons for Pricing Model Tables (3d29312)
     - [ ] Add `isLoading` state to `PricingModelDetailsClient`.
     - [ ] Update table rendering to show `TablePlaceholder` or inline skeleton rows while `isLoading` is true.
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Performance & Data Fetching Optimization' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Performance & Data Fetching Optimization' (Protocol in workflow.md) (85a8365)
