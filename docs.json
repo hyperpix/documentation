@@ -62,7 +62,10 @@
     "primary": {
       "type": "button",
       "label": "Dashboard",
-      "href": "https://dashboard.montra.fi"
+      "href": "https://sandbox.montra.fi",
+      "style": {
+        "backgroundColor": "#ca7fe9"
+      }
     }
   },
   "footer": {
