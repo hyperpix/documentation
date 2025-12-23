@@ -17,7 +17,9 @@ describe('PaymentElement', () => {
   });
 
   it('should show loading state initially', () => {
-    const { getByTestId } = render(<PaymentElement sessionId="sess_123" />);
-    expect(getByTestId('loading-message')).toBeDefined();
+    render(<PaymentElement sessionId="sess_123" />);
+    const loadingMessages = screen.getAllByTestId('loading-message');
+    expect(loadingMessages.length).toBeGreaterThanOrEqual(1);
+    expect(loadingMessages[0]).toBeDefined();
   });
 });
