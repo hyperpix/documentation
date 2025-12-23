@@ -1,0 +1,74 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Montra",
+  "colors": {
+    "primary": "#000000",
+    "light": "#555555"
+  },
+  "favicon": "/favicon.png",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "introduction",
+              "quickstart"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "SDK Guides",
+        "groups": [
+          {
+            "group": "SDK Reference",
+            "pages": [
+              "sdk-reference/installation",
+              "sdk-reference/server-side",
+              "sdk-reference/react-nextjs",
+              "sdk-reference/express"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "API Reference",
+            "pages": [
+              "api-reference/customers",
+              "api-reference/usage",
+              "api-reference/features",
+              "api-reference/entitlements"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "logo": "/logo.png",
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:support@montra.fi"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Dashboard",
+      "href": "https://dashboard.montra.fi"
+    }
+  },
+  "footer": {
+    "socials": {
+      "twitter": "https://twitter.com/montra",
+      "github": "https://github.com/montra"
+    }
+  }
+}
