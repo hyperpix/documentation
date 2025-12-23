@@ -19,7 +19,7 @@
 - [x] Task: Implement SDK methods for usage reporting, customer management, and billing. [360b836]
 - [x] Task: Implement SDK method for entitlement/usage checking. [360b836]
 - [x] Task: Create a sample integration script using the SDK. [2a2bb56]
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: SDK Development' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 3: SDK Development' (Protocol in workflow.md) [checkpoint: 9ce9288]
 
 ## Phase 4: Checkout Infrastructure & Client SDK
 - [ ] Task: Implement Checkout Session API (`/api/v1/checkout/sessions`).
