@@ -16,7 +16,7 @@ Goal: Ensure complete isolation between merchants and secure public access.
 - [x] Task: Global RLS Audit (fba1e0f)
     - [ ] Scan all tables (`customers`, `transactions`, `settlements`, etc.) for permissive policies.
     - [ ] Apply strict `merchant_id = auth.uid()` policies to any remaining vulnerable tables.
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Security Hardening' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Security Hardening' (Protocol in workflow.md) (333912a)
 
 ## Phase 2: Bug Fixes & Navigation
 Goal: Restore core functionality to the dashboard.
@@ -26,4 +26,4 @@ Goal: Restore core functionality to the dashboard.
 - [x] Task: Fix Transactions Page Loading (f9f45a0)
 - [x] Task: Optimize Settings Page Load (f9f45a0)
 - [x] Task: Fix Onboarding Dropdown Scrollbar Shift (f9f45a0)
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Bug Fixes, Navigation & UI' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Bug Fixes, Navigation & UI' (Protocol in workflow.md) (333912a)
