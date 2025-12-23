@@ -1,0 +1,100 @@
+# Montra API Reference (v1)
+This document provides a comprehensive overview of the Montra API, designed for both developers and AI agents.
+
+## Base URL
+The API is available at `https://api.montra.fi/v1`
+
+## Authentication
+All API requests must include an API key in the `Authorization` header as a Bearer token.
+```
+Authorization: Bearer <your_api_key>
+```
+
+---
+
+## Customers
+Manage billing profiles for your users.
+
+### List Customers
+`GET /customers`
+Retrieve all customers for your merchant.
+
+### Create Customer
+`POST /customers`
+Payload:
+- `name`: string (required)
+- `email`: string (required)
+- `phone`: string (optional)
+- `address`: object (optional)
+
+---
+
+## Usage & Metering
+Report events to track consumption for usage-based billing.
+
+### Report Usage
+`POST /usage`
+Payload:
+- `customer_id`: string (required)
+- `meter_slug`: string (required)
+- `amount`: number (default: 1)
+- `metadata`: object (optional)
+
+---
+
+## Entitlements
+Check if a customer is allowed to access specific features or has remaining quota.
+
+### Check Entitlement
+`GET /entitlements?customer_id=<id>&meter=<slug>&feature=<slug>`
+One of `meter` or `feature` must be provided.
+
+---
+
+## Checkout & Links
+Programmatically generate payment flows.
+
+### Create Checkout Link
+`POST /checkout-links`
+Payload:
+- `link_name`: string (required)
+- `payment_name`: string (required)
+- `amount`: number (optional)
+- `description`: string (optional)
+- `image_url`: string (optional)
+
+---
+
+## Subscriptions
+Manage recurring billing relationships.
+
+### List Subscriptions
+`GET /subscriptions`
+Filters: `customer_id`, `status` (active, past_due, canceled).
+
+---
+
+## Commerce Operations
+Handle reversals and incentives.
+
+### Create Refund
+`POST /refunds`
+Payload:
+- `transaction_id`: string (required)
+- `amount`: number (required)
+- `reason`: string (optional)
+
+### Create Discount
+`POST /discounts`
+Payload:
+- `name`: string (required)
+- `code`: string (required)
+- `percent_off`: number (optional)
+- `amount_off`: number (optional)
+- `duration`: 'once' | 'repeating' | 'forever'
+
+---
+
+## Webhooks
+Configure endpoints to receive real-time notifications for events like `checkout.completed`.
+Manage endpoints via `POST /webhooks/endpoints`.

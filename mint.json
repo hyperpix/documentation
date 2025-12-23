@@ -4,10 +4,10 @@
   "logo": "/logo.png",
   "favicon": "/favicon.png",
   "colors": {
-    "primary": "#000000",
-    "light": "#555555",
+    "primary": "#ca7fe9",
+    "light": "#ca7fe9",
     "anchors": {
-      "from": "#000000",
+      "from": "#ca7fe9",
       "to": "#555555"
     }
   },
@@ -54,9 +54,13 @@
       "group": "API Reference",
       "pages": [
         "api-reference/customers",
+        "api-reference/subscriptions",
         "api-reference/usage",
         "api-reference/features",
-        "api-reference/entitlements"
+        "api-reference/entitlements",
+        "api-reference/checkout-links",
+        "api-reference/refunds",
+        "api-reference/discounts"
       ]
     }
   ],
