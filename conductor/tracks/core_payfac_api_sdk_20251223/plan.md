@@ -22,7 +22,7 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 3: SDK Development' (Protocol in workflow.md) [checkpoint: 9ce9288]
 
 ## Phase 4: Checkout Infrastructure & Client SDK
-- [ ] Task: Implement Checkout Session API (`/api/v1/checkout/sessions`).
+- [~] Task: Implement Checkout Session API (`/api/v1/checkout/sessions`).
 - [ ] Task: Scaffold Client-Side SDK (checkout.js / React components).
 - [ ] Task: Implement `createCheckoutSession` and frontend mounting logic.
 - [ ] Task: Build Custom Checkout UI components (Payment Element).
