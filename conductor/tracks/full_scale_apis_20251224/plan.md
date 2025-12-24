@@ -8,7 +8,7 @@
 - [x] Task: Conductor - User Manual Verification 'Core Management' (Protocol in workflow.md)
 
 ## Phase 2: Reliability (Idempotency Keys)
-- [ ] Task: Implement idempotency middleware or utility to track `Idempotency-Key` headers.
+- [x] Task: Implement idempotency middleware or utility to track `Idempotency-Key` headers. [6b18b66]
 - [ ] Task: Update `POST` handlers for Customers, Payments, and Checkout Links to support idempotency.
 - [ ] Task: Write integration tests verifying that duplicate requests return the same response without duplicate side effects.
 - [ ] Task: Conductor - User Manual Verification 'Idempotency Keys' (Protocol in workflow.md)
