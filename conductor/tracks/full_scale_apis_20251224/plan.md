@@ -8,12 +8,12 @@
 - [x] Task: Update TypeScript SDK with `meters` and `pricing-models` methods and types. [829deed]
 - [x] Task: Conductor - User Manual Verification 'Core Management' (Protocol in workflow.md)
 
-## Phase 2: Reliability (Idempotency Keys)
+## Phase 2: Reliability (Idempotency Keys) [checkpoint: c31f1fd]
 - [x] Task: Implement idempotency middleware or utility to track `Idempotency-Key` headers. [6b18b66]
 - [x] Task: Update `POST` handlers for Customers, Payments, and Checkout Links to support idempotency. [4c4163b]
 - [x] Task: Write integration tests verifying that duplicate requests return the same response without duplicate side effects. [4c4163b]
 - [x] Task: Update TypeScript SDK `request` method to support optional `idempotencyKey`. [457abf2]
-- [ ] Task: Conductor - User Manual Verification 'Idempotency Keys' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Idempotency Keys' (Protocol in workflow.md)
 
 ## Phase 3: Enhanced Commerce (Multi-item Links & Assets)
 - [ ] Task: Update `checkout_links` schema to support an array of line items.
