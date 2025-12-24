@@ -5,7 +5,9 @@ import {
   UsagePayload, 
   EntitlementCheck, 
   Invoice,
-  Feature
+  Feature,
+  Meter,
+  PricingModel
 } from './types';
 import { DEFAULT_BASE_URL } from './constants';
 
@@ -106,6 +108,56 @@ export class Montra {
     const res = await this.request<ApiResponse<Feature>>('/features', {
       method: 'POST',
       body: JSON.stringify(data),
+    });
+    return res.data!;
+  }
+
+  // Meters
+  async listMeters(): Promise<Meter[]> {
+    const res = await this.request<ApiResponse<Meter[]>>('/meters');
+    return res.data!;
+  }
+
+  async createMeter(data: {
+    name: string;
+    slug: string;
+    pricing_model_id: string;
+    aggregation?: string;
+    currency?: string;
+    amount?: number | null;
+    events_per_unit?: number;
+  }): Promise<Meter> {
+    const res = await this.request<ApiResponse<Meter>>('/meters', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    });
+    return res.data!;
+  }
+
+  // Pricing Models
+  async listPricingModels(): Promise<PricingModel[]> {
+    const res = await this.request<ApiResponse<PricingModel[]>>('/pricing-models');
+    return res.data!;
+  }
+
+  async createPricingModel(data: {
+    name: string;
+    is_default?: boolean;
+  }): Promise<PricingModel> {
+    const res = await this.request<ApiResponse<PricingModel>>('/pricing-models', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    });
+    return res.data!;
+  }
+
+  async updatePricingModel(id: string, data: Partial<{
+    name: string;
+    is_default: boolean;
+  }>): Promise<PricingModel> {
+    const res = await this.request<ApiResponse<PricingModel>>('/pricing-models', {
+      method: 'PATCH',
+      body: JSON.stringify({ id, ...data }),
     });
     return res.data!;
   }

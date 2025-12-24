@@ -129,4 +129,64 @@ describe('Montra SDK', () => {
       );
     });
   });
+
+  describe('Meters', () => {
+    it('should create a meter', async () => {
+      const mockMeter = { id: 'meter_1', name: 'Test' };
+      vi.mocked(fetch).mockResolvedValue({
+        ok: true,
+        json: async () => ({ success: true, data: mockMeter }),
+      } as any);
+
+      const result = await client.createMeter({
+        name: 'Test',
+        slug: 'test',
+        pricing_model_id: 'pm_1'
+      });
+      expect(result).toEqual(mockMeter);
+      expect(fetch).toHaveBeenCalledWith(
+        expect.stringContaining('/meters'),
+        expect.objectContaining({ method: 'POST' })
+      );
+    });
+
+    it('should list meters', async () => {
+      const mockMeters = [{ id: 'meter_1' }];
+      vi.mocked(fetch).mockResolvedValue({
+        ok: true,
+        json: async () => ({ success: true, data: mockMeters }),
+      } as any);
+
+      const result = await client.listMeters();
+      expect(result).toEqual(mockMeters);
+    });
+  });
+
+  describe('Pricing Models', () => {
+    it('should create a pricing model', async () => {
+      const mockPm = { id: 'pm_1', name: 'Standard' };
+      vi.mocked(fetch).mockResolvedValue({
+        ok: true,
+        json: async () => ({ success: true, data: mockPm }),
+      } as any);
+
+      const result = await client.createPricingModel({ name: 'Standard' });
+      expect(result).toEqual(mockPm);
+    });
+
+    it('should update a pricing model', async () => {
+      const mockPm = { id: 'pm_1', name: 'Updated' };
+      vi.mocked(fetch).mockResolvedValue({
+        ok: true,
+        json: async () => ({ success: true, data: mockPm }),
+      } as any);
+
+      const result = await client.updatePricingModel('pm_1', { name: 'Updated' });
+      expect(result).toEqual(mockPm);
+      expect(fetch).toHaveBeenCalledWith(
+        expect.stringContaining('/pricing-models'),
+        expect.objectContaining({ method: 'PATCH' })
+      );
+    });
+  });
 });

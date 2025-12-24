@@ -56,6 +56,28 @@ export interface Feature {
   created_at: string;
 }
 
+export interface Meter {
+  id: string;
+  merchant_id: string;
+  pricing_model_id: string;
+  name: string;
+  slug: string;
+  aggregation: string;
+  currency: string;
+  amount: number | null;
+  events_per_unit: number;
+  created_at: string;
+}
+
+export interface PricingModel {
+  id: string;
+  merchant_id: string;
+  name: string | null;
+  products_count: number;
+  is_default: boolean;
+  created_at: string;
+}
+
 // Checkout Types
 export interface MontraCheckoutOptions {
   publishableKey: string;
