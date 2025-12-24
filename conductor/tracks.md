@@ -7,3 +7,11 @@
 
 ## [~] Track: Build Warning & Environment Resolution
 *Link: [./conductor/tracks/build_resolution_20251224/](./conductor/tracks/build_resolution_20251224/)*
+
+
+---
+
+## [~] Track: Add an item card with title, description, image, and price to the Receipt email template.
+*Link: [./conductor/tracks/receipt_card_update_20251225/](./conductor/tracks/receipt_card_update_20251225/)*
+
+

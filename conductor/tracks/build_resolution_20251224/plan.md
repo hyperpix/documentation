@@ -13,7 +13,7 @@ Focuses on resolving the underlying `pnpm` and git submodule issues that cause i
 ## Phase 2: Linting & Code Hygiene
 Focuses on cleaning up the codebase by removing unused variables and fixing hook dependency issues identified in the logs.
 
-- [ ] Task: Write Tests for Hook Logic. Create unit tests for components where `useMemo` dependencies are being modified to ensure behavior is preserved.
+- [~] Task: Write Tests for Hook Logic. Create unit tests for components where `useMemo` dependencies are being modified to ensure behavior is preserved.
 - [ ] Task: Clean Up Unused Variables and Imports. Systematically remove unused variables (`_err`, `_ignoredDob`, etc.) and unused icon/component imports as reported by ESLint.
 - [ ] Task: Fix React Hook Dependencies. Refactor `useMemo` hooks (specifically the `revenue` logic) to include all necessary dependencies or wrap initializations correctly.
 - [ ] Task: Verify Linting Pass. Run `pnpm run lint` and confirm 0 warnings.

@@ -23,3 +23,4 @@ A specialized Payment Facilitator (PayFac) and billing platform designed specifi
 - **Live Pricing Propagation:** Instant updates to customer pricing when a pricing model is modified.
 - **Lifecycle Scheduling:** Advanced support for scheduled plan changes and automated end-of-cycle transitions.
 - **Merchant Audit Logs:** Detailed history of system events and resource modifications for operational transparency.
+- **Customers Analytics:** Dedicated interface for managing and analyzing customer relationships, billing history, and plan assignments.

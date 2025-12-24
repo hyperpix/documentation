@@ -2,7 +2,7 @@
 
 # Core
 - **Language:** TypeScript
-- **Frontend Framework:** Next.js 16 (App Router)
+- **Frontend Framework:** Next.js 15 (App Router)
 - **UI Library:** React 19
 - **Styling:** Tailwind CSS 4 & Radix UI (shadcn/ui)
 
