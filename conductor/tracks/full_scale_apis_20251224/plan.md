@@ -31,9 +31,9 @@
 - [x] Task: Update TypeScript SDK with subscription lifecycle methods (`upgrade`, `pause`, `resume`). [2a2a22c]
 - [x] Task: Conductor - User Manual Verification 'Subscription Lifecycle' (Protocol in workflow.md) [6e4b8d2]
 
-## Phase 5: Operations & Deployment
-- [ ] Task: Implement `webhooks` table and `/api/v1/webhooks` management API.
-- [ ] Task: Implement `/api/v1/audit-logs` for fetching merchant event history.
-- [ ] Task: Comprehensive Documentation Update: Update all `api-reference/` MDX files, SDK examples, and `docs/llms-full.txt`.
-- [ ] Task: Push all changes to the remote repository (Documentation & msandbox-backup).
-- [ ] Task: Conductor - User Manual Verification 'Operations & Deployment' (Protocol in workflow.md)
+## Phase 5: Operations & Deployment [checkpoint: 3be68ec]
+- [x] Task: Implement `webhooks` table and `/api/v1/webhooks` management API. [0d200dd]
+- [x] Task: Implement `/api/v1/audit-logs` for fetching merchant event history. [0d200dd]
+- [x] Task: Comprehensive Documentation Update: Update all `api-reference/` MDX files, SDK examples, and `docs/llms-full.txt`. [d4383e5]
+- [x] Task: Push all changes to the remote repository (Documentation & msandbox-backup). [3be68ec]
+- [x] Task: Conductor - User Manual Verification 'Operations & Deployment' (Protocol in workflow.md) [3be68ec]
