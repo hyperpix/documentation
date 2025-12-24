@@ -3,7 +3,7 @@
     - Check for `RESEND_API_KEY` in `.env` and `.env.local`.
     - Define new environment variable `RESEND_RECEIPT_TEMPLATE_ID`.
     - Verify Supabase Storage bucket for documents exists (or create if needed).
-- [ ] Task: Create Receipt Template Logic
+- [x] Task: Create Receipt Template Logic 3315d4d
     - Create/Update `msandbox-backup/lib/resend-templates.ts` to include `createOrUpdateReceiptTemplate`.
     - Define the HTML structure for the receipt, including the conditional logic for the merchant image.
     - Define the variable schema for the receipt template.
