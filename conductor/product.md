@@ -20,3 +20,6 @@ A specialized Payment Facilitator (PayFac) and billing platform designed specifi
 - **Secure Checkout:** Hosted and embedded checkout sessions for secure payment collection.
 - **API-First Infrastructure:** Comprehensive API for customer management, billing, and entitlements.
 - **Webhook Notifications:** Secure, real-time event delivery system for asynchronous merchant notifications.
+- **Live Pricing Propagation:** Instant updates to customer pricing when a pricing model is modified.
+- **Lifecycle Scheduling:** Advanced support for scheduled plan changes and automated end-of-cycle transitions.
+- **Merchant Audit Logs:** Detailed history of system events and resource modifications for operational transparency.
