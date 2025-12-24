@@ -17,7 +17,7 @@
 
 ## Phase 3: Enhanced Commerce (Multi-item Links & Assets)
 - [x] Task: Update `checkout_links` schema to support an array of line items. [c845cf9]
-- [ ] Task: Implement `/api/v1/files` for asset uploads to Supabase Storage.
+- [x] Task: Implement `/api/v1/files` for asset uploads to Supabase Storage. [b8f023a]
 - [ ] Task: Update `/api/v1/checkout-links` to accept multiple `line_items` and `image_ids`.
 - [ ] Task: Update the hosted checkout page to render multiple items and associated images.
 - [ ] Task: Update TypeScript SDK with multi-item checkout support and file upload method.
