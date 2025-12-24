@@ -14,14 +14,14 @@
     - Create a utility to generate the Receipt PDF (using `react-pdf` or similar).
     - Implement upload logic to Supabase Storage (e.g., `invoices` or `documents` bucket).
     - Ensure public URL generation for the uploaded file.
-- [ ] Task: Implement `sendReceiptEmail` Action
+- [x] Task: Implement `sendReceiptEmail` Action fdc7dec
     - Create `msandbox-backup/app/actions/send-receipt-email.ts`.
     - Implement logic to fetch transaction/payment details.
     - Implement logic to fetch merchant details (including logo URL).
     - **Integration:** Call PDF generation and upload, then use the resulting URL.
     - Map data to the Resend template variables.
     - Call Resend API to send the email.
-- [ ] Task: Integrate Receipt Trigger
+- [x] Task: Integrate Receipt Trigger fdc7dec
     - Identify the payment success handler (likely in a webhook or payment processing action).
     - Add the call to `sendReceiptEmail` upon successful payment.
 - [ ] Task: Conductor - User Manual Verification 'Receipt Email Implementation' (Protocol in workflow.md)
