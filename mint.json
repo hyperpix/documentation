@@ -59,10 +59,14 @@
         "api-reference/subscriptions",
         "api-reference/usage",
         "api-reference/features",
+        "api-reference/pricing-models",
+        "api-reference/meters",
         "api-reference/entitlements",
         "api-reference/checkout-links",
         "api-reference/refunds",
-        "api-reference/discounts"
+        "api-reference/discounts",
+        "api-reference/webhooks",
+        "api-reference/audit-logs"
       ]
     }
   ],
