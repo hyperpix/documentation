@@ -16,7 +16,7 @@
 - [x] Task: Conductor - User Manual Verification 'Idempotency Keys' (Protocol in workflow.md)
 
 ## Phase 3: Enhanced Commerce (Multi-item Links & Assets)
-- [ ] Task: Update `checkout_links` schema to support an array of line items.
+- [x] Task: Update `checkout_links` schema to support an array of line items. [c845cf9]
 - [ ] Task: Implement `/api/v1/files` for asset uploads to Supabase Storage.
 - [ ] Task: Update `/api/v1/checkout-links` to accept multiple `line_items` and `image_ids`.
 - [ ] Task: Update the hosted checkout page to render multiple items and associated images.
