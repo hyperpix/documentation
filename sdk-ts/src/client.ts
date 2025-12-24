@@ -20,13 +20,17 @@ export class Montra {
     this.baseUrl = options.baseUrl || DEFAULT_BASE_URL;
   }
 
-  private async request<T>(path: string, options: RequestInit = {}): Promise<T> {
+  private async request<T>(path: string, options: RequestInit & { idempotencyKey?: string } = {}): Promise<T> {
     const url = `${this.baseUrl}${path}`;
-    const headers = {
+    const headers: Record<string, string> = {
       'Authorization': `Bearer ${this.apiKey}`,
       'Content-Type': 'application/json',
-      ...options.headers,
+      ...((options.headers as any) || {}),
     };
+
+    if (options.idempotencyKey) {
+      headers['Idempotency-Key'] = options.idempotencyKey;
+    }
 
     const response = await fetch(url, {
       ...options,
@@ -43,10 +47,11 @@ export class Montra {
   }
 
   // Customers
-  async createCustomer(data: { name: string; email: string }): Promise<Customer> {
+  async createCustomer(data: { name: string; email: string }, options: { idempotencyKey?: string } = {}): Promise<Customer> {
     const res = await this.request<ApiResponse<Customer>>('/customers', {
       method: 'POST',
       body: JSON.stringify(data),
+      idempotencyKey: options.idempotencyKey,
     });
     return res.data!;
   }
@@ -57,10 +62,11 @@ export class Montra {
   }
 
   // Usage
-  async reportUsage(payload: UsagePayload): Promise<boolean> {
+  async reportUsage(payload: UsagePayload, options: { idempotencyKey?: string } = {}): Promise<boolean> {
     const res = await this.request<ApiResponse>('/usage', {
       method: 'POST',
       body: JSON.stringify(payload),
+      idempotencyKey: options.idempotencyKey,
     });
     return res.success;
   }
@@ -104,10 +110,11 @@ export class Montra {
     pricing_model_id: string;
     type?: string;
     status?: string;
-  }): Promise<Feature> {
+  }, options: { idempotencyKey?: string } = {}): Promise<Feature> {
     const res = await this.request<ApiResponse<Feature>>('/features', {
       method: 'POST',
       body: JSON.stringify(data),
+      idempotencyKey: options.idempotencyKey,
     });
     return res.data!;
   }
@@ -126,10 +133,11 @@ export class Montra {
     currency?: string;
     amount?: number | null;
     events_per_unit?: number;
-  }): Promise<Meter> {
+  }, options: { idempotencyKey?: string } = {}): Promise<Meter> {
     const res = await this.request<ApiResponse<Meter>>('/meters', {
       method: 'POST',
       body: JSON.stringify(data),
+      idempotencyKey: options.idempotencyKey,
     });
     return res.data!;
   }
@@ -143,10 +151,11 @@ export class Montra {
   async createPricingModel(data: {
     name: string;
     is_default?: boolean;
-  }): Promise<PricingModel> {
+  }, options: { idempotencyKey?: string } = {}): Promise<PricingModel> {
     const res = await this.request<ApiResponse<PricingModel>>('/pricing-models', {
       method: 'POST',
       body: JSON.stringify(data),
+      idempotencyKey: options.idempotencyKey,
     });
     return res.data!;
   }

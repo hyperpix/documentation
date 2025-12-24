@@ -34,6 +34,23 @@ describe('Montra SDK', () => {
       );
     });
 
+    it('should send idempotency key if provided', async () => {
+      vi.mocked(fetch).mockResolvedValue({
+        ok: true,
+        json: async () => ({ success: true, data: { id: 'cust_1' } }),
+      } as any);
+
+      await client.createCustomer({ name: 'Test', email: 't@t.com' }, { idempotencyKey: 'key_123' });
+      expect(fetch).toHaveBeenCalledWith(
+        expect.any(String),
+        expect.objectContaining({
+          headers: expect.objectContaining({
+            'Idempotency-Key': 'key_123',
+          }),
+        })
+      );
+    });
+
     it('should list customers', async () => {
       const mockCustomers = [{ id: 'cust_1', name: 'Test', email: 'test@test.com' }];
       vi.mocked(fetch).mockResolvedValue({
