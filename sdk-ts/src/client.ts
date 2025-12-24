@@ -8,7 +8,9 @@ import {
   Feature,
   Meter,
   PricingModel,
-  FileResponse
+  FileResponse,
+  SubscriptionUpgradeResponse,
+  ScheduledChange
 } from './types';
 import { DEFAULT_BASE_URL } from './constants';
 
@@ -215,6 +217,46 @@ export class Montra {
     const res = await this.request<ApiResponse<any>>('/checkout-links', {
       method: 'POST',
       body: JSON.stringify(data),
+      idempotencyKey: options.idempotencyKey,
+    });
+    return res.data!;
+  }
+
+  // Subscriptions Lifecycle
+  async upgradeSubscription(id: string, data: { new_pricing_model_id: string }, options: { idempotencyKey?: string } = {}): Promise<SubscriptionUpgradeResponse> {
+    const res = await this.request<ApiResponse<SubscriptionUpgradeResponse>>(`/subscriptions/${id}/upgrade`, {
+      method: 'POST',
+      body: JSON.stringify(data),
+      idempotencyKey: options.idempotencyKey,
+    });
+    return res.data!;
+  }
+
+  async listScheduledChanges(id: string): Promise<ScheduledChange[]> {
+    const res = await this.request<ApiResponse<ScheduledChange[]>>(`/subscriptions/${id}/scheduled-changes`);
+    return res.data!;
+  }
+
+  async scheduleSubscriptionChange(id: string, data: { new_pricing_model_id: string, scheduled_for: string }, options: { idempotencyKey?: string } = {}): Promise<ScheduledChange> {
+    const res = await this.request<ApiResponse<ScheduledChange>>(`/subscriptions/${id}/scheduled-changes`, {
+      method: 'POST',
+      body: JSON.stringify(data),
+      idempotencyKey: options.idempotencyKey,
+    });
+    return res.data!;
+  }
+
+  async pauseSubscription(id: string, options: { idempotencyKey?: string } = {}): Promise<any> {
+    const res = await this.request<ApiResponse<any>>(`/subscriptions/${id}/pause`, {
+      method: 'POST',
+      idempotencyKey: options.idempotencyKey,
+    });
+    return res.data!;
+  }
+
+  async resumeSubscription(id: string, options: { idempotencyKey?: string } = {}): Promise<any> {
+    const res = await this.request<ApiResponse<any>>(`/subscriptions/${id}/resume`, {
+      method: 'POST',
       idempotencyKey: options.idempotencyKey,
     });
     return res.data!;

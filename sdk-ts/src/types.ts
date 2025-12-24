@@ -86,6 +86,25 @@ export interface FileResponse {
   type: string;
 }
 
+export interface SubscriptionUpgradeResponse {
+  subscription: any;
+  proration: {
+    unused_amount: number;
+    remaining_amount: number;
+    net_amount: number;
+    remaining_ratio: number;
+  };
+}
+
+export interface ScheduledChange {
+  id: string;
+  subscription_id: string;
+  new_pricing_model_id: string;
+  scheduled_for: string;
+  status: 'pending' | 'completed' | 'cancelled';
+  created_at: string;
+}
+
 // Checkout Types
 export interface MontraCheckoutOptions {
   publishableKey: string;

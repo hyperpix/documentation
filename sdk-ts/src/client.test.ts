@@ -244,4 +244,35 @@ describe('Montra SDK', () => {
       expect(result).toEqual(mockLink);
     });
   });
+
+  describe('Subscriptions Lifecycle', () => {
+    it('should upgrade a subscription', async () => {
+      const mockUpgradeRes = { subscription: { id: 'sub_1' }, proration: { net_amount: 10 } };
+      vi.mocked(fetch).mockResolvedValue({
+        ok: true,
+        json: async () => ({ success: true, data: mockUpgradeRes }),
+      } as any);
+
+      const result = await client.upgradeSubscription('sub_1', { new_pricing_model_id: 'pm_2' });
+      expect(result).toEqual(mockUpgradeRes);
+      expect(fetch).toHaveBeenCalledWith(
+        expect.stringContaining('/subscriptions/sub_1/upgrade'),
+        expect.objectContaining({ method: 'POST' })
+      );
+    });
+
+    it('should schedule a plan change', async () => {
+      const mockChange = { id: 'ch_1', status: 'pending' };
+      vi.mocked(fetch).mockResolvedValue({
+        ok: true,
+        json: async () => ({ success: true, data: mockChange }),
+      } as any);
+
+      const result = await client.scheduleSubscriptionChange('sub_1', {
+        new_pricing_model_id: 'pm_2',
+        scheduled_for: '2025-02-01'
+      });
+      expect(result).toEqual(mockChange);
+    });
+  });
 });
