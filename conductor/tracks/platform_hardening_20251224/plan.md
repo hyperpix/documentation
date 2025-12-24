@@ -19,3 +19,9 @@
 - [ ] Task: Remove identified junk files from root (temporary HTML, logs, backup artifacts).
 - [ ] Task: Refactor and document API key logic to separate domain logic (`lib/`) from orchestration (`app/actions/`).
 - [ ] Task: Conductor - User Manual Verification 'Quality & Hygiene' (Protocol in workflow.md)
+
+## Phase 4: Customers UI Implementation
+- [x] Task: Add "Customers" link under "Analytics" section in the sidebar. [42f8a61]
+- [x] Task: Create "Customers" list page with a UI matching the "Invoices" page. [0d200dd]
+- [x] Task: Implement "Customer Detail" view matching the structure of "Pricing Model" detail. [0d200dd]
+- [ ] Task: Conductor - User Manual Verification 'Customers UI Implementation' (Protocol in workflow.md)

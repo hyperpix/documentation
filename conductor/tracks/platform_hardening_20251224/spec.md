@@ -20,14 +20,19 @@ This track addresses the critical security, configuration, and architectural iss
 - **Repository Cleanup:** Remove temporary and unused files from the repository root (e.g., `invoice_temp.html`, `start_log.txt`, error logs).
 - **Logic Consolidation:** Clearly separate and document the responsibilities of the API key logic between `lib/` (domain/DB) and `app/actions/` (orchestration).
 
+### 4. Customers Analytics UI
+- **Analytics Sidebar Integration:** Add a "Customers" page link under the "Analytics" section in the sidebar.
+- **Customers List View:** Implement a list view for customers with a UI matching the "Invoices" page.
+- **Customer Detail View:** Implement a detail view for individual customers with a UI/structure similar to the "Pricing Model" detail view.
+
 ## Acceptance Criteria
 - [ ] `logTransaction` server action is secured and verified against server-side data.
 - [ ] `middleware.ts` correctly guards protected routes.
 - [ ] `npm install` (or `pnpm install`) succeeds with stable dependency versions.
 - [ ] The project contains zero `.jsx` files.
 - [ ] Repository root contains only essential configuration and project files.
+- [ ] "Customers" analytics page is accessible and follows the design patterns of Invoices/Pricing Models.
 - [ ] All automated tests pass.
 
 ## Out of Scope
 - Integration of actual live payment providers (PayTheory/Stripe) is deferred to a future track.
-- UI/UX redesigns.
