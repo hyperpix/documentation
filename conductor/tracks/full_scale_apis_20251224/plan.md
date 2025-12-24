@@ -25,7 +25,7 @@
 
 ## Phase 4: Subscription Lifecycle (Proration & Scheduling)
 - [x] Task: Implement proration calculation logic in a shared utility. [a32f2df]
-- [ ] Task: Implement `/api/v1/subscriptions/[id]/upgrade` with proration support.
+- [x] Task: Implement `/api/v1/subscriptions/[id]/upgrade` with proration support. [72bbe17]
 - [ ] Task: Implement a "Scheduled Changes" queue in the database for end-of-cycle transitions.
 - [ ] Task: Write tests for complex proration scenarios and scheduled downgrades.
 - [ ] Task: Update TypeScript SDK with subscription lifecycle methods (`upgrade`, `pause`, `resume`).
