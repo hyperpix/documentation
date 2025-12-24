@@ -8,9 +8,9 @@
 - [ ] Task: Conductor - User Manual Verification 'Security Hardening' (Protocol in workflow.md)
 
 ## Phase 2: Dependency & Environment
-- [~] Task: Update `package.json` dependencies (`next`, `react`, `react-dom`) to stable versions.
-- [ ] Task: Remove `node_modules` and lockfiles, then perform a fresh `pnpm install`.
-- [ ] Task: Run a full build (`npm run build`) to ensure environment stability.
+- [x] Task: Update `package.json` dependencies (`next`, `react`, `react-dom`) to stable versions. [83dc56f]
+- [x] Task: Remove `node_modules` and lockfiles, then perform a fresh `pnpm install`. [83dc56f]
+- [x] Task: Run a full build (`npm run build`) to ensure environment stability. [83dc56f]
 - [ ] Task: Conductor - User Manual Verification 'Dependency & Environment' (Protocol in workflow.md)
 
 ## Phase 3: Quality & Hygiene
