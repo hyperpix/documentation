@@ -1,0 +1,8 @@
+{
+  "track_id": "full_scale_apis_20251224",
+  "type": "feature",
+  "status": "new",
+  "created_at": "2025-12-24T05:50:00Z",
+  "updated_at": "2025-12-24T05:50:00Z",
+  "description": "Full scale APIs expansion including Pricing Models, Meters, Idempotency, Subscription Lifecycle, and Webhooks."
+}

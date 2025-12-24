@@ -29,7 +29,7 @@
 - [x] Task: Implement a "Scheduled Changes" queue in the database for end-of-cycle transitions. [17e860a]
 - [x] Task: Write tests for complex proration scenarios and scheduled downgrades. [8c43bca]
 - [x] Task: Update TypeScript SDK with subscription lifecycle methods (`upgrade`, `pause`, `resume`). [2a2a22c]
-- [ ] Task: Conductor - User Manual Verification 'Subscription Lifecycle' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Subscription Lifecycle' (Protocol in workflow.md) [6e4b8d2]
 
 ## Phase 5: Operations & Deployment
 - [ ] Task: Implement `webhooks` table and `/api/v1/webhooks` management API.
