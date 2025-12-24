@@ -3,7 +3,7 @@
 ## Phase 1: Core Management (Pricing Models & Meters)
 - [x] Task: Create `meters` table and CRUD logic in `app/api/v1/meters/route.ts`. [62e03ab]
 - [x] Task: Write TDD tests for Pricing Model CRUD and Live Update propagation. [700c09d]
-- [ ] Task: Implement `GET/POST/PATCH/DELETE` for `/api/v1/pricing-models`.
+- [x] Task: Implement `GET/POST/PATCH/DELETE` for `/api/v1/pricing-models`. [1ac866c]
 - [ ] Task: Implement logic for immediate propagation of model changes to assigned customers.
 - [ ] Task: Conductor - User Manual Verification 'Core Management' (Protocol in workflow.md)
 
