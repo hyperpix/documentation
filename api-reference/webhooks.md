@@ -11,7 +11,13 @@ Returns a list of your configured webhook endpoints.
 
 `GET https://api.montra.fi/v1/webhooks`
 
+```bash
+curl -X GET https://api.montra.fi/v1/webhooks \
+  -H "Authorization: Bearer <your_api_key>"
+```
+
 ### Response
+
 
 ```json
 {
@@ -37,7 +43,19 @@ Creates a new webhook endpoint.
 
 `POST https://api.montra.fi/v1/webhooks`
 
+```bash
+curl -X POST https://api.montra.fi/v1/webhooks \
+  -H "Authorization: Bearer <your_api_key>" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "url": "https://example.com/webhook",
+    "description": "Production Webhook",
+    "events": ["*"]
+  }'
+```
+
 ### Body Parameters
+
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |

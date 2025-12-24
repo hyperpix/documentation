@@ -11,7 +11,13 @@ Returns a paginated list of audit logs for your account.
 
 `GET https://api.montra.fi/v1/audit-logs`
 
+```bash
+curl -X GET https://api.montra.fi/v1/audit-logs \
+  -H "Authorization: Bearer <your_api_key>"
+```
+
 ### Query Parameters
+
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
