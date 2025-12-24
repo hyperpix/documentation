@@ -18,6 +18,25 @@ curl -X POST https://dev.montra.fi/api/v1/checkout-links \
   }'
 ```
 
+| `description` | string | Description displayed on the checkout page. |
+| `line_items` | array | **Optional**. Array of line items for multi-item checkouts. |
+| `image_ids` | array | **Optional**. Array of internal file IDs or external URLs for images. |
+
+### Multi-item Example
+
+```bash
+curl -X POST https://api.montra.fi/v1/checkout-links \
+  -H "Authorization: Bearer <your_api_key>" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "link_name": "Premium Bundle",
+    "line_items": [
+      {"product_id": "prod_1", "quantity": 1},
+      {"product_id": "prod_2", "quantity": 2}
+    ]
+  }'
+```
+
 ### Response
 
 ```json

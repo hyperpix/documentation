@@ -32,3 +32,39 @@ curl -X GET https://dev.montra.fi/api/v1/subscriptions \
 }
 ```
 
+## Upgrade Subscription
+Immediately upgrade a customer to a new pricing model. This calculates proration automatically.
+
+### HTTP Request
+`POST https://api.montra.fi/v1/subscriptions/{id}/upgrade`
+
+### Body Parameters
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| `new_pricing_model_id` | string | **Required**. The ID of the model to upgrade to. |
+
+## Schedule a Change
+Schedule a plan change to take effect at a future date (usually the end of the current cycle).
+
+### HTTP Request
+`POST https://api.montra.fi/v1/subscriptions/{id}/scheduled-changes`
+
+### Body Parameters
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| `new_pricing_model_id` | string | **Required**. The target pricing model. |
+| `scheduled_for` | string | **Required**. ISO 8601 timestamp for the change. |
+
+## Pause Subscription
+Pause a subscription. This stops future billing until resumed.
+
+### HTTP Request
+`POST https://api.montra.fi/v1/subscriptions/{id}/pause`
+
+## Resume Subscription
+Resume a previously paused subscription.
+
+### HTTP Request
+`POST https://api.montra.fi/v1/subscriptions/{id}/resume`
+
+

@@ -40,6 +40,28 @@ Payload:
 - `amount`: number (default: 1)
 - `metadata`: object (optional)
 
+### Manage Meters
+`GET /meters` - List all meters.
+`POST /meters` - Create a new meter.
+
+---
+
+## Pricing Models
+Manage plan structures and propagation rules.
+
+### List Models
+`GET /pricing-models`
+
+### Create Model
+`POST /pricing-models`
+Payload:
+- `name`: string (required)
+- `is_default`: boolean (optional)
+
+### Update Model (Live Propagation)
+`PATCH /pricing-models`
+Changes to a model immediately propagate to all assigned customers.
+
 ---
 
 ## Entitlements
@@ -58,10 +80,10 @@ Programmatically generate payment flows.
 `POST /checkout-links`
 Payload:
 - `link_name`: string (required)
-- `payment_name`: string (required)
+- `line_items`: array (optional, for multi-item checkouts)
+- `image_ids`: array (optional, internal IDs or external URLs)
 - `amount`: number (optional)
-- `description`: string (optional)
-- `image_url`: string (optional)
+- `payment_name`: string (required)
 
 ---
 
@@ -71,6 +93,18 @@ Manage recurring billing relationships.
 ### List Subscriptions
 `GET /subscriptions`
 Filters: `customer_id`, `status` (active, past_due, canceled).
+
+### Upgrade (Prorated)
+`POST /subscriptions/{id}/upgrade`
+Immediately move a customer to a new plan.
+
+### Schedule Change
+`POST /subscriptions/{id}/scheduled-changes`
+Schedule a plan change for a future date.
+
+### Pause / Resume
+`POST /subscriptions/{id}/pause`
+`POST /subscriptions/{id}/resume`
 
 ---
 
@@ -96,5 +130,20 @@ Payload:
 ---
 
 ## Webhooks
-Configure endpoints to receive real-time notifications for events like `checkout.completed`.
-Manage endpoints via `POST /webhooks/endpoints`.
+Configure endpoints to receive real-time notifications.
+
+### Manage Endpoints
+`GET /webhooks` - List all endpoints.
+`POST /webhooks` - Create a new endpoint.
+`PATCH /webhooks/{id}` - Update endpoint.
+`DELETE /webhooks/{id}` - Remove endpoint.
+
+---
+
+## Audit Logs
+Access merchant event history.
+
+### List Logs
+`GET /audit-logs`
+Filters: `event_type`, `resource_type`.
+Pagination: `limit`, `offset`.
