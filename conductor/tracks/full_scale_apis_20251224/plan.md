@@ -24,7 +24,7 @@
 - [x] Task: Conductor - User Manual Verification 'Enhanced Commerce' (Protocol in workflow.md)
 
 ## Phase 4: Subscription Lifecycle (Proration & Scheduling)
-- [ ] Task: Implement proration calculation logic in a shared utility.
+- [x] Task: Implement proration calculation logic in a shared utility. [a32f2df]
 - [ ] Task: Implement `/api/v1/subscriptions/[id]/upgrade` with proration support.
 - [ ] Task: Implement a "Scheduled Changes" queue in the database for end-of-cycle transitions.
 - [ ] Task: Write tests for complex proration scenarios and scheduled downgrades.
