@@ -23,7 +23,7 @@
 - [x] Task: Update TypeScript SDK with multi-item checkout support and file upload method. [c8c879b]
 - [x] Task: Conductor - User Manual Verification 'Enhanced Commerce' (Protocol in workflow.md)
 
-## Phase 4: Subscription Lifecycle (Proration & Scheduling)
+## Phase 4: Subscription Lifecycle (Proration & Scheduling) [checkpoint: 0829797]
 - [x] Task: Implement proration calculation logic in a shared utility. [a32f2df]
 - [x] Task: Implement `/api/v1/subscriptions/[id]/upgrade` with proration support. [72bbe17]
 - [x] Task: Implement a "Scheduled Changes" queue in the database for end-of-cycle transitions. [17e860a]
