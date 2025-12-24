@@ -5,12 +5,14 @@
 - [x] Task: Write TDD tests for Pricing Model CRUD and Live Update propagation. [700c09d]
 - [x] Task: Implement `GET/POST/PATCH/DELETE` for `/api/v1/pricing-models`. [1ac866c]
 - [x] Task: Implement logic for immediate propagation of model changes to assigned customers. [4aac84a]
+- [x] Task: Update TypeScript SDK with `meters` and `pricing-models` methods and types. [829deed]
 - [x] Task: Conductor - User Manual Verification 'Core Management' (Protocol in workflow.md)
 
 ## Phase 2: Reliability (Idempotency Keys)
 - [x] Task: Implement idempotency middleware or utility to track `Idempotency-Key` headers. [6b18b66]
 - [x] Task: Update `POST` handlers for Customers, Payments, and Checkout Links to support idempotency. [4c4163b]
 - [x] Task: Write integration tests verifying that duplicate requests return the same response without duplicate side effects. [4c4163b]
+- [ ] Task: Update TypeScript SDK `request` method to support optional `idempotencyKey`.
 - [ ] Task: Conductor - User Manual Verification 'Idempotency Keys' (Protocol in workflow.md)
 
 ## Phase 3: Enhanced Commerce (Multi-item Links & Assets)
@@ -18,6 +20,7 @@
 - [ ] Task: Implement `/api/v1/files` for asset uploads to Supabase Storage.
 - [ ] Task: Update `/api/v1/checkout-links` to accept multiple `line_items` and `image_ids`.
 - [ ] Task: Update the hosted checkout page to render multiple items and associated images.
+- [ ] Task: Update TypeScript SDK with multi-item checkout support and file upload method.
 - [ ] Task: Conductor - User Manual Verification 'Enhanced Commerce' (Protocol in workflow.md)
 
 ## Phase 4: Subscription Lifecycle (Proration & Scheduling)
@@ -25,6 +28,7 @@
 - [ ] Task: Implement `/api/v1/subscriptions/[id]/upgrade` with proration support.
 - [ ] Task: Implement a "Scheduled Changes" queue in the database for end-of-cycle transitions.
 - [ ] Task: Write tests for complex proration scenarios and scheduled downgrades.
+- [ ] Task: Update TypeScript SDK with subscription lifecycle methods (`upgrade`, `pause`, `resume`).
 - [ ] Task: Conductor - User Manual Verification 'Subscription Lifecycle' (Protocol in workflow.md)
 
 ## Phase 5: Operations & Deployment
