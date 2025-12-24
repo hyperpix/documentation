@@ -10,7 +10,7 @@
 ## Phase 2: Reliability (Idempotency Keys)
 - [x] Task: Implement idempotency middleware or utility to track `Idempotency-Key` headers. [6b18b66]
 - [x] Task: Update `POST` handlers for Customers, Payments, and Checkout Links to support idempotency. [4c4163b]
-- [ ] Task: Write integration tests verifying that duplicate requests return the same response without duplicate side effects.
+- [x] Task: Write integration tests verifying that duplicate requests return the same response without duplicate side effects. [4c4163b]
 - [ ] Task: Conductor - User Manual Verification 'Idempotency Keys' (Protocol in workflow.md)
 
 ## Phase 3: Enhanced Commerce (Multi-item Links & Assets)
