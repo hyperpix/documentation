@@ -206,4 +206,42 @@ describe('Montra SDK', () => {
       );
     });
   });
+
+  describe('Files', () => {
+    it('should upload a file', async () => {
+      const mockFileRes = { id: 'path/to/file', url: 'http://test.com/file' };
+      vi.mocked(fetch).mockResolvedValue({
+        ok: true,
+        json: async () => ({ success: true, data: mockFileRes }),
+      } as any);
+
+      // Create a simple blob since File might not be available in all environments
+      const file = new Blob(['test'], { type: 'text/plain' }) as any;
+      file.name = 'test.txt';
+
+      const result = await client.uploadFile(file);
+      expect(result).toEqual(mockFileRes);
+      expect(fetch).toHaveBeenCalledWith(
+        expect.stringContaining('/files'),
+        expect.objectContaining({ method: 'POST' })
+      );
+    });
+  });
+
+  describe('Checkout Links', () => {
+    it('should create a checkout link', async () => {
+      const mockLink = { id: 'link_1', url: 'http://pay.com/1' };
+      vi.mocked(fetch).mockResolvedValue({
+        ok: true,
+        json: async () => ({ success: true, data: mockLink }),
+      } as any);
+
+      const result = await client.createCheckoutLink({
+        link_name: 'Test',
+        payment_name: 'Prod',
+        line_items: [{ title: 'Item 1', amount: 10, quantity: 1 }]
+      });
+      expect(result).toEqual(mockLink);
+    });
+  });
 });

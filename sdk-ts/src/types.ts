@@ -78,6 +78,14 @@ export interface PricingModel {
   created_at: string;
 }
 
+export interface FileResponse {
+  id: string;
+  url: string;
+  name: string;
+  size: number;
+  type: string;
+}
+
 // Checkout Types
 export interface MontraCheckoutOptions {
   publishableKey: string;

@@ -7,7 +7,8 @@ import {
   Invoice,
   Feature,
   Meter,
-  PricingModel
+  PricingModel,
+  FileResponse
 } from './types';
 import { DEFAULT_BASE_URL } from './constants';
 
@@ -167,6 +168,54 @@ export class Montra {
     const res = await this.request<ApiResponse<PricingModel>>('/pricing-models', {
       method: 'PATCH',
       body: JSON.stringify({ id, ...data }),
+    });
+    return res.data!;
+  }
+
+  // Files
+  async uploadFile(file: File, options: { idempotencyKey?: string } = {}): Promise<FileResponse> {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    const url = `${this.baseUrl}/files`;
+    const headers: Record<string, string> = {
+      'Authorization': `Bearer ${this.apiKey}`,
+    };
+
+    if (options.idempotencyKey) {
+      headers['Idempotency-Key'] = options.idempotencyKey;
+    }
+
+    const response = await fetch(url, {
+      method: 'POST',
+      headers,
+      body: formData,
+    });
+
+    const body = await response.json();
+
+    if (!response.ok) {
+      throw new Error(body.error?.message || `Upload failed with status ${response.status}`);
+    }
+
+    return (body as ApiResponse<FileResponse>).data!;
+  }
+
+  // Checkout Links
+  async createCheckoutLink(data: {
+    link_name: string;
+    payment_name: string;
+    amount?: number;
+    description?: string;
+    image_url?: string;
+    status?: string;
+    line_items?: any[];
+    image_ids?: string[];
+  }, options: { idempotencyKey?: string } = {}): Promise<any> {
+    const res = await this.request<ApiResponse<any>>('/checkout-links', {
+      method: 'POST',
+      body: JSON.stringify(data),
+      idempotencyKey: options.idempotencyKey,
     });
     return res.data!;
   }
