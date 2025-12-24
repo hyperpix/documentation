@@ -20,7 +20,7 @@
 - [x] Task: Implement `/api/v1/files` for asset uploads to Supabase Storage. [b8f023a]
 - [x] Task: Update `/api/v1/checkout-links` to accept multiple `line_items` and `image_ids`. [43608b9]
 - [x] Task: Update the hosted checkout page to render multiple items and associated images. [0d8d226]
-- [ ] Task: Update TypeScript SDK with multi-item checkout support and file upload method.
+- [x] Task: Update TypeScript SDK with multi-item checkout support and file upload method. [c8c879b]
 - [ ] Task: Conductor - User Manual Verification 'Enhanced Commerce' (Protocol in workflow.md)
 
 ## Phase 4: Subscription Lifecycle (Proration & Scheduling)
