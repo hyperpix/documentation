@@ -2,7 +2,7 @@
 
 ## Phase 1: Security Hardening
 - [x] Task: Write failing tests for `logTransaction` rejecting client-provided amounts/fees. [262e5e1]
-- [ ] Task: Refactor `logTransaction` server action in `app/actions/transactions.ts` to verify status server-side.
+- [x] Task: Refactor `logTransaction` server action in `app/actions/transactions.ts` to verify status server-side. [c5ae086]
 - [ ] Task: Implement `middleware.ts` to protect `/dashboard`, `/settings`, and `/api` routes.
 - [ ] Task: Write integration tests verifying `middleware.ts` redirects unauthenticated users.
 - [ ] Task: Conductor - User Manual Verification 'Security Hardening' (Protocol in workflow.md)
