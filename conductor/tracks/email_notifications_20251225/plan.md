@@ -1,4 +1,4 @@
-# Phase 1: Setup and Configuration
+# Phase 1: Setup and Configuration [checkpoint: 3283a85]
 - [x] Task: Verify Environment Configuration dc4d887
     - Check for `RESEND_API_KEY` in `.env` and `.env.local`.
     - Define new environment variable `RESEND_RECEIPT_TEMPLATE_ID`.
@@ -7,7 +7,7 @@
     - Create/Update `msandbox-backup/lib/resend-templates.ts` to include `createOrUpdateReceiptTemplate`.
     - Define the HTML structure for the receipt, including the conditional logic for the merchant image.
     - Define the variable schema for the receipt template.
-- [ ] Task: Conductor - User Manual Verification 'Setup and Configuration' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Setup and Configuration' (Protocol in workflow.md)
 
 # Phase 2: Receipt Email Implementation
 - [ ] Task: Implement Receipt PDF Generation & Upload
