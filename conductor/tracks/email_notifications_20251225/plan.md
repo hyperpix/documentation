@@ -26,7 +26,7 @@
     - Add the call to `sendReceiptEmail` upon successful payment.
 - [x] Task: Conductor - User Manual Verification 'Receipt Email Implementation' (Protocol in workflow.md)
 
-# Phase 3: Invoice Email Verification & Refinement
+# Phase 3: Invoice Email Verification & Refinement [checkpoint: 8dddbc0]
 - [x] Task: Implement Invoice PDF Upload Logic
     - Modify `msandbox-backup/app/actions/send-invoice-email.ts` to generate the PDF buffer server-side.
     - Upload the PDF to Supabase Storage.
@@ -34,4 +34,4 @@
 - [x] Task: Review Invoice Email Action
     - Audit `msandbox-backup/app/actions/send-invoice-email.ts` to ensure it aligns with the spec.
     - Verify variable mapping matches the existing template.
-- [ ] Task: Conductor - User Manual Verification 'Invoice Email Verification & Refinement' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Invoice Email Verification & Refinement' (Protocol in workflow.md)
