@@ -11,7 +11,7 @@
 - [x] Task: Refactor Dashboard Components [7e2f41f]
     - Modify `DashboardGrossVolume`, `DashboardSettlements`, and `DashboardTransactions` to consume data from the single `useDashboardOverview` hook.
     - Remove individual query calls from these components.
-- [ ] Task: Conductor - User Manual Verification 'Consolidated Dashboard Data Fetching' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Consolidated Dashboard Data Fetching' (Protocol in workflow.md)
 
 ## Phase 2: Chart Visual Restoration
 - [ ] Task: Fix AnalyticsChart Path & Point Rendering
