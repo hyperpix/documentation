@@ -21,7 +21,7 @@
 - [x] Task: Update Sparkline Component [23f5cf8]
 - [x] Task: Conductor - User Manual Verification 'Chart Visual Restoration' (Protocol in workflow.md)
 
-## Phase 3: Integrated Loading & UX Refinement
+## Phase 3: Integrated Loading & UX Refinement [checkpoint: 945f154]
 - [x] Task: Implement Component-Level Loading States [7e2f41f]
     - Update all dashboard widgets to remove early-return skeleton blocks.
     - Add internal skeleton placeholders for numeric values and chart areas.
