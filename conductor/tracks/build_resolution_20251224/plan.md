@@ -13,15 +13,15 @@ Focuses on resolving the underlying `pnpm` and git submodule issues that cause i
 ## Phase 2: Linting & Code Hygiene
 Focuses on cleaning up the codebase by removing unused variables and fixing hook dependency issues identified in the logs.
 
-- [~] Task: Write Tests for Hook Logic. Create unit tests for components where `useMemo` dependencies are being modified to ensure behavior is preserved.
-- [ ] Task: Clean Up Unused Variables and Imports. Systematically remove unused variables (`_err`, `_ignoredDob`, etc.) and unused icon/component imports as reported by ESLint.
-- [ ] Task: Fix React Hook Dependencies. Refactor `useMemo` hooks (specifically the `revenue` logic) to include all necessary dependencies or wrap initializations correctly.
-- [ ] Task: Verify Linting Pass. Run `pnpm run lint` and confirm 0 warnings.
+- [x] Task: Write Tests for Hook Logic. Create unit tests for components where `useMemo` dependencies are being modified to ensure behavior is preserved.
+- [x] Task: Clean Up Unused Variables and Imports. Systematically remove unused variables (`_err`, `_ignoredDob`, etc.) and unused icon/component imports as reported by ESLint.
+- [x] Task: Fix React Hook Dependencies. Refactor `useMemo` hooks (specifically the `revenue` logic) to include all necessary dependencies or wrap initializations correctly.
+- [x] Task: Verify Linting Pass. Run `pnpm run lint` and confirm 0 warnings.
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Linting & Code Hygiene' (Protocol in workflow.md)
 
 ## Phase 3: Build Stability & Final Check
 Final verification to ensure the production build is fully stable.
 
-- [ ] Task: Full Type Check. Run `tsc --noEmit` to ensure no TypeScript errors were introduced during cleanup.
-- [ ] Task: Production Build Verification. Execute `pnpm run build` and verify 0 warnings in the final output.
+- [x] Task: Full Type Check. Run `tsc --noEmit` to ensure no TypeScript errors were introduced during cleanup.
+- [x] Task: Production Build Verification. Execute `pnpm run build` and verify 0 warnings in the final output.
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Build Stability & Final Check' (Protocol in workflow.md)
