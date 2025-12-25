@@ -13,7 +13,7 @@
     - Remove individual query calls from these components.
 - [x] Task: Conductor - User Manual Verification 'Consolidated Dashboard Data Fetching' (Protocol in workflow.md)
 
-## Phase 2: Chart Visual Restoration
+## Phase 2: Chart Visual Restoration [checkpoint: 958e4d7]
 - [x] Task: Fix AnalyticsChart Path & Point Rendering [2a35f43]
     - Audit `msandbox-backup/components/charts/AnalyticsChart.tsx`.
     - Restore `<Line />` or `<Area />` props for dots/points (e.g., `activeDot`, `dot`).
@@ -22,11 +22,9 @@
 - [x] Task: Conductor - User Manual Verification 'Chart Visual Restoration' (Protocol in workflow.md)
 
 ## Phase 3: Integrated Loading & UX Refinement
-- [ ] Task: Implement Component-Level Loading States
+- [x] Task: Implement Component-Level Loading States [7e2f41f]
     - Update all dashboard widgets to remove early-return skeleton blocks.
     - Add internal skeleton placeholders for numeric values and chart areas.
     - Ensure `ReportsSection` and `Analytics` pages use the same integrated loading pattern.
-- [ ] Task: Verify SWR Transitions
-    - Test switching between "Daily", "Weekly", and "Monthly" intervals on the Analytics page.
-    - Confirm that old data remains visible (perhaps slightly dimmed) until new data is ready, preventing "skeleton jumps".
-- [ ] Task: Conductor - User Manual Verification 'Integrated Loading & UX Refinement' (Protocol in workflow.md)
+- [x] Task: Verify SWR Transitions [0c8c140]
+- [x] Task: Conductor - User Manual Verification 'Integrated Loading & UX Refinement' (Protocol in workflow.md)
