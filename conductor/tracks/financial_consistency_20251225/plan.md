@@ -26,9 +26,9 @@ Clean up component logic by removing redundant inline calculations and utilizing
 - [x] Task: Align Email & PDF Logic. Update `sendReceiptEmail` and PDF generator functions to use the standardized formatters. 5b15ff3
 - [x] Task: Conductor - User Manual Verification 'Phase 3: UI & Component Alignment' (Protocol in workflow.md) eec49c4
 
-## Phase 4: Final Integrity Pass
+## Phase 4: Final Integrity Pass [checkpoint: eec49c4]
 Final validation to ensure zero regressions and stable deployment.
 
-- [ ] Task: Full Type Check. Run `tsc --noEmit` to ensure no financial type mismatches were introduced.
-- [ ] Task: Production Build Verification. Execute `pnpm run build` and verify a clean output.
-- [ ] Task: Conductor - User Manual Verification 'Phase 4: Final Integrity Pass' (Protocol in workflow.md)
+- [x] Task: Full Type Check. Run `tsc --noEmit` to ensure no financial type mismatches were introduced. eec49c4
+- [x] Task: Production Build Verification. Execute `pnpm run build` and verify a clean output. eec49c4
+- [x] Task: Conductor - User Manual Verification 'Phase 4: Final Integrity Pass' (Protocol in workflow.md) eec49c4
