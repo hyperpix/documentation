@@ -5,7 +5,7 @@
     - Create `msandbox-backup/app/api/dashboard/overview/route.ts`.
     - Implement logic to fetch Transactions (recent 5), Settlements (recent 4), and Gross Volume series (7-day daily + previous 7-day total) in a single backend process.
     - Ensure it returns a unified JSON structure for the dashboard frontend.
-- [ ] Task: Update TanStack Query Hooks
+- [x] Task: Update TanStack Query Hooks [f9f5091]
     - Add `useDashboardOverview` hook in `msandbox-backup/lib/hooks/use-queries.ts`.
     - Configure `staleTime: 60000` (1 minute) and `placeholderData: keepPreviousData` to enable SWR logic.
 - [ ] Task: Refactor Dashboard Components
