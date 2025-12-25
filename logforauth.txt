@@ -1,0 +1,48 @@
+bvjafemrmwkadtgnnuzj.supabase.co/auth/v1/user:1  Failed to load resource: the server responded with a status of 403 ()
+bvjafemrmwkadtgnnuzj.supabase.co/auth/v1/user:1  Failed to load resource: the server responded with a status of 403 ()
+page-6a95cad21b9d4d5a.js:1 Failed to save onboarding progress Auth session missing!
+(anonymous) @ page-6a95cad21b9d4d5a.js:1
+bvjafemrmwkadtgnnuzj.supabase.co/auth/v1/user:1  Failed to load resource: the server responded with a status of 403 ()
+page-6a95cad21b9d4d5a.js:1 Failed to save onboarding progress Auth session missing!
+(anonymous) @ page-6a95cad21b9d4d5a.js:1
+bvjafemrmwkadtgnnuzj.supabase.co/auth/v1/user:1  Failed to load resource: the server responded with a status of 403 ()
+page-6a95cad21b9d4d5a.js:1 Failed to save onboarding progress Auth session missing!
+(anonymous) @ page-6a95cad21b9d4d5a.js:1
+bvjafemrmwkadtgnnuzj.supabase.co/auth/v1/user:1  Failed to load resource: the server responded with a status of 403 ()
+page-6a95cad21b9d4d5a.js:1 Failed to save onboarding progress Auth session missing!
+(anonymous) @ page-6a95cad21b9d4d5a.js:1
+bvjafemrmwkadtgnnuzj.supabase.co/auth/v1/user:1  Failed to load resource: the server responded with a status of 403 ()
+page-6a95cad21b9d4d5a.js:1 Failed to save onboarding progress Auth session missing!
+(anonymous) @ page-6a95cad21b9d4d5a.js:1
+bvjafemrmwkadtgnnuzj.supabase.co/auth/v1/user:1  Failed to load resource: the server responded with a status of 403 ()
+page-6a95cad21b9d4d5a.js:1 Failed to save onboarding progress Auth session missing!
+(anonymous) @ page-6a95cad21b9d4d5a.js:1
+bvjafemrmwkadtgnnuzj.supabase.co/auth/v1/user:1  Failed to load resource: the server responded with a status of 403 ()
+page-6a95cad21b9d4d5a.js:1 Failed to save onboarding progress Auth session missing!
+(anonymous) @ page-6a95cad21b9d4d5a.js:1
+bvjafemrmwkadtgnnuzj.supabase.co/auth/v1/user:1  Failed to load resource: the server responded with a status of 403 ()
+page-6a95cad21b9d4d5a.js:1 Failed to save onboarding progress Auth session missing!
+(anonymous) @ page-6a95cad21b9d4d5a.js:1
+bvjafemrmwkadtgnnuzj.supabase.co/auth/v1/user:1  Failed to load resource: the server responded with a status of 403 ()
+page-6a95cad21b9d4d5a.js:1 Failed to save onboarding progress Auth session missing!
+(anonymous) @ page-6a95cad21b9d4d5a.js:1
+bvjafemrmwkadtgnnuzj.supabase.co/auth/v1/user:1  Failed to load resource: the server responded with a status of 403 ()
+page-6a95cad21b9d4d5a.js:1 [Onboarding] handleSubmit authData: {
+  "user": null
+}
+page-6a95cad21b9d4d5a.js:1 [Onboarding] handleSubmit error: AuthSessionMissingError: Auth session missing!
+    at tx (5890-f2bf9347d1a05678.js:24:45977)
+    at async tN (5890-f2bf9347d1a05678.js:24:47235)
+    at async tU (5890-f2bf9347d1a05678.js:24:46645)
+    at async 5890-f2bf9347d1a05678.js:37:14837
+    at async rf._useSession (5890-f2bf9347d1a05678.js:37:12376)
+    at async rf._getUser (5890-f2bf9347d1a05678.js:37:14674)
+    at async 5890-f2bf9347d1a05678.js:37:14468
+page-6a95cad21b9d4d5a.js:1 [Onboarding] User not found in session at final step
+es @ page-6a95cad21b9d4d5a.js:1
+page-6a95cad21b9d4d5a.js:1 Onboarding error: Error: Not authenticated
+    at es (page-6a95cad21b9d4d5a.js:1:11369)
+es @ page-6a95cad21b9d4d5a.js:1
+bvjafemrmwkadtgnnuzj.supabase.co/auth/v1/user:1  Failed to load resource: the server responded with a status of 403 ()
+page-6a95cad21b9d4d5a.js:1 Failed to save onboarding progress Auth session missing!
+(anonymous) @ page-6a95cad21b9d4d5a.js:1
