@@ -8,7 +8,7 @@
 - [x] Task: Update TanStack Query Hooks [f9f5091]
     - Add `useDashboardOverview` hook in `msandbox-backup/lib/hooks/use-queries.ts`.
     - Configure `staleTime: 60000` (1 minute) and `placeholderData: keepPreviousData` to enable SWR logic.
-- [ ] Task: Refactor Dashboard Components
+- [x] Task: Refactor Dashboard Components [7e2f41f]
     - Modify `DashboardGrossVolume`, `DashboardSettlements`, and `DashboardTransactions` to consume data from the single `useDashboardOverview` hook.
     - Remove individual query calls from these components.
 - [ ] Task: Conductor - User Manual Verification 'Consolidated Dashboard Data Fetching' (Protocol in workflow.md)
