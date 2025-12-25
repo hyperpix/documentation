@@ -9,13 +9,13 @@ Establish a single source of truth for financial formatting and conversion logic
 - [x] Task: Implement Centralized Financial Utils. Create or update `lib/utils.ts` with standardized functions for dollar/cent conversion and formatting. dd92285
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Utility Centralization & Testing' (Protocol in workflow.md) dd92285
 
-## Phase 2: Data Hook & Action Refactor
+## Phase 2: Data Hook & Action Refactor [checkpoint: f468ed6]
 Refactor data-mapping layers to perform consistent conversions at the source.
 
-- [ ] Task: Refactor use-queries.ts Hooks. Update `useTransactions`, `useInvoices`, `useSettlements`, and `usePaymentLinks` to return dollar values using the new utils.
-- [ ] Task: Write Tests for Data Hooks. Verify that hooks correctly transform mock database payloads into component-ready dollar objects.
-- [ ] Task: Update Server Actions. Audit `app/actions/` (e.g., `transactions.ts`, `invoices.ts`) to ensure data returned for display is correctly scaled.
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Data Hook & Action Refactor' (Protocol in workflow.md)
+- [x] Task: Refactor use-queries.ts Hooks. Update `useTransactions`, `useInvoices`, `useSettlements`, and `usePaymentLinks` to return dollar values using the new utils. 1501427
+- [x] Task: Write Tests for Data Hooks. Verify that hooks correctly transform mock database payloads into component-ready dollar objects. 1501427
+- [x] Task: Update Server Actions. Audit `app/actions/` (e.g., `transactions.ts`, `invoices.ts`) to ensure data returned for display is correctly scaled. 1501427
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Data Hook & Action Refactor' (Protocol in workflow.md) f468ed6
 
 ## Phase 3: UI & Component Alignment
 Clean up component logic by removing redundant inline calculations and utilizing standardized hooks.
