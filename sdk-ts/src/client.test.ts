@@ -75,6 +75,33 @@ describe('Montra SDK', () => {
       });
       expect(result).toEqual(mockCustomer);
     });
+
+    it('should get a customer', async () => {
+      const mockCustomer = { id: 'cust_1', name: 'Test' };
+      vi.mocked(fetch).mockResolvedValue({
+        ok: true,
+        json: async () => ({ success: true, data: mockCustomer }),
+      } as any);
+
+      const result = await client.getCustomer('cust_1');
+      expect(result).toEqual(mockCustomer);
+      expect(fetch).toHaveBeenCalledWith(expect.stringContaining('/customers/cust_1'), expect.any(Object));
+    });
+
+    it('should update a customer', async () => {
+      const mockCustomer = { id: 'cust_1', name: 'Updated' };
+      vi.mocked(fetch).mockResolvedValue({
+        ok: true,
+        json: async () => ({ success: true, data: mockCustomer }),
+      } as any);
+
+      const result = await client.updateCustomer('cust_1', { name: 'Updated' });
+      expect(result).toEqual(mockCustomer);
+      expect(fetch).toHaveBeenCalledWith(
+        expect.stringContaining('/customers/cust_1'),
+        expect.objectContaining({ method: 'PATCH' })
+      );
+    });
   });
 
   describe('Analytics', () => {
