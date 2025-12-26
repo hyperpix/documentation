@@ -84,3 +84,48 @@ const feature = await montra.createFeature({
 });
 ```
 
+## Subscriptions
+
+Manage customer subscription lifecycles.
+
+### Pause Subscription
+```typescript
+await montra.pauseSubscription('sub_123', {
+  pause_behavior: 'mark_uncollectible',
+  resume_at: '2025-02-01T00:00:00Z'
+});
+```
+
+### Resume Subscription
+```typescript
+await montra.resumeSubscription('sub_123');
+```
+
+## Analytics
+
+Fetch time-series data for revenue, MRR, and more.
+
+### Get Analytics Series
+```typescript
+const series = await montra.getAnalyticsSeries({
+  interval: 'daily',
+  points: 14
+});
+
+console.log(series.revenue);
+```
+
+## Webhooks
+
+Securely verify incoming webhooks from Montra.
+
+### Verify Signature
+```typescript
+const isValid = await montra.webhooks.verifySignature(
+  rawBody,
+  signature,
+  process.env.MONTRA_WEBHOOK_SECRET!
+);
+```
+
+
