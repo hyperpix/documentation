@@ -10,12 +10,12 @@ Establish the foundational types and resilient error handling for the new featur
 - [x] Task: Implement Retry Logic. Add a configurable retry mechanism to the internal request handler for handling transient 5xx network errors. a5c6a09
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Core Types & Error Handling' (Protocol in workflow.md) 1edc391
 
-## Phase 2: Feature Implementation (Analytics & Subscriptions)
+## Phase 2: Feature Implementation (Analytics & Subscriptions) [checkpoint: 90b9e45]
 Bring the latest billing and reporting capabilities to the SDK surface.
 
-- [ ] Task: Implement Analytics Methods. Write tests and then implement `sdk.analytics.getSeries()` with support for all aggregation intervals.
-- [ ] Task: Implement Subscription Lifecycle. Write tests and then implement `pause`, `resume`, and `updateSchedule` methods.
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Feature Implementation (Analytics & Subscriptions)' (Protocol in workflow.md)
+- [x] Task: Implement Analytics Methods. Write tests and then implement `sdk.analytics.getSeries()` with support for all aggregation intervals. a5c6a09
+- [x] Task: Implement Subscription Lifecycle. Write tests and then implement `pause`, `resume`, and `updateSchedule` methods. a5c6a09
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Feature Implementation (Analytics & Subscriptions)' (Protocol in workflow.md) 90b9e45
 
 ## Phase 3: Feature Implementation (Customers & Webhooks)
 Finalize resource management methods and add critical security utilities.
