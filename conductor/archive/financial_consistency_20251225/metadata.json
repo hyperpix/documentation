@@ -1,0 +1,8 @@
+{
+  "track_id": "financial_consistency_20251225",
+  "type": "bug",
+  "status": "new",
+  "created_at": "2025-12-25T18:08:00Z",
+  "updated_at": "2025-12-25T18:08:00Z",
+  "description": "check that amount is same across pages and theres no issue with formatting, do tests everywhere"
+}
