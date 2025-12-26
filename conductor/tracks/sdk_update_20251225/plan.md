@@ -25,9 +25,9 @@ Finalize resource management methods and add critical security utilities.
 - [x] Task: Add Workflow Helpers. Implement high-level convenience methods like `sdk.customers.createWithSubscription()`. a5c6a09
 - [x] Task: Conductor - User Manual Verification 'Phase 3: Feature Implementation (Customers & Webhooks)' (Protocol in workflow.md) 7eb0209
 
-## Phase 4: Documentation & Integration Pass
+## Phase 4: Documentation & Integration Pass [checkpoint: 20303f2]
 Ensure all new features are well-documented and the SDK remains fully compatible.
 
-- [ ] Task: Update SDK Documentation. Revise `sdk-ts/README.md` and `sdk-reference/*.md` with clear code examples for every new capability.
-- [ ] Task: Full Regression Suite. Run all existing and new tests to verify 100% coverage and zero breaking changes.
-- [ ] Task: Conductor - User Manual Verification 'Phase 4: Documentation & Integration Pass' (Protocol in workflow.md)
+- [x] Task: Update SDK Documentation. Revise `sdk-ts/README.md` and `sdk-reference/*.md` with clear code examples for every new capability. 85600a8
+- [x] Task: Full Regression Suite. Run all existing and new tests to verify 100% coverage and zero breaking changes. a5c6a09
+- [x] Task: Conductor - User Manual Verification 'Phase 4: Documentation & Integration Pass' (Protocol in workflow.md) 20303f2
