@@ -19,6 +19,65 @@ export interface Customer {
   email: string;
   status: string;
   created_at: string;
+  invoicing_emails?: string[];
+  metadata?: Record<string, any>;
+}
+
+export interface CreateCustomerPayload {
+  name: string;
+  email: string;
+  invoicing_emails?: string[];
+  metadata?: Record<string, any>;
+}
+
+export interface AnalyticsPoint {
+  key: string;
+  value: number;
+}
+
+export interface AnalyticsMovementPoint {
+  key: string;
+  positive: number;
+  negative: number;
+  new: number;
+  expansion: number;
+  contraction: number;
+  churn: number;
+}
+
+export interface AnalyticsSeriesResponse {
+  interval: string;
+  start: string;
+  end: string;
+  points: number;
+  product: string;
+  transactions: AnalyticsPoint[];
+  payments: AnalyticsPoint[];
+  failed: AnalyticsPoint[];
+  revenue: AnalyticsPoint[];
+  netCashFlow: AnalyticsPoint[];
+  settlements: AnalyticsPoint[];
+  customersNew: AnalyticsPoint[];
+  customersTotal: AnalyticsPoint[];
+  mrrMovements: AnalyticsMovementPoint[];
+}
+
+export interface SubscriptionPausePayload {
+  pause_behavior: 'keep_as_is' | 'mark_uncollectible' | 'void';
+  resume_at?: string;
+}
+
+export interface Subscription {
+  id: string;
+  customer_id: string;
+  pricing_model_id: string;
+  status: 'active' | 'past_due' | 'unpaid' | 'canceled' | 'incomplete' | 'incomplete_expired' | 'trialing' | 'paused';
+  current_period_start: string;
+  current_period_end: string;
+  cancel_at_period_end: boolean;
+  paused_at?: string | null;
+  resume_at?: string | null;
+  created_at: string;
 }
 
 export interface UsagePayload {

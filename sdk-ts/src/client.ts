@@ -10,9 +10,41 @@ import {
   PricingModel,
   FileResponse,
   SubscriptionUpgradeResponse,
-  ScheduledChange
+  ScheduledChange,
+  AnalyticsSeriesResponse,
+  Subscription,
+  SubscriptionPausePayload,
+  CreateCustomerPayload
 } from './types';
 import { DEFAULT_BASE_URL } from './constants';
+
+export class MontraError extends Error {
+  constructor(public code: string, message: string, public details?: any) {
+    super(message);
+    this.name = 'MontraError';
+  }
+}
+
+export class MontraApiError extends MontraError {
+  constructor(public statusCode: number, code: string, message: string, details?: any) {
+    super(code, message, details);
+    this.name = 'MontraApiError';
+  }
+}
+
+export class MontraAuthenticationError extends MontraApiError {
+  constructor(message: string = 'Authentication failed') {
+    super(401, 'unauthorized', message);
+    this.name = 'MontraAuthenticationError';
+  }
+}
+
+export class MontraRateLimitError extends MontraApiError {
+  constructor(message: string = 'Rate limit exceeded') {
+    super(429, 'rate_limit', message);
+    this.name = 'MontraRateLimitError';
+  }
+}
 
 export class Montra {
   private apiKey: string;
@@ -23,34 +55,54 @@ export class Montra {
     this.baseUrl = options.baseUrl || DEFAULT_BASE_URL;
   }
 
-  private async request<T>(path: string, options: RequestInit & { idempotencyKey?: string } = {}): Promise<T> {
+  private async request<T>(path: string, options: RequestInit & { idempotencyKey?: string; retryCount?: number } = {}): Promise<T> {
+    const { retryCount = 3, ...fetchOptions } = options;
     const url = `${this.baseUrl}${path}`;
     const headers: Record<string, string> = {
       'Authorization': `Bearer ${this.apiKey}`,
       'Content-Type': 'application/json',
-      ...((options.headers as any) || {}),
+      ...((fetchOptions.headers as any) || {}),
     };
 
-    if (options.idempotencyKey) {
-      headers['Idempotency-Key'] = options.idempotencyKey;
+    if (fetchOptions.idempotencyKey) {
+      headers['Idempotency-Key'] = fetchOptions.idempotencyKey;
     }
 
-    const response = await fetch(url, {
-      ...options,
-      headers,
-    });
+    let lastError: Error | null = null;
+    for (let i = 0; i < retryCount; i++) {
+      try {
+        const response = await fetch(url, {
+          ...fetchOptions,
+          headers,
+        });
 
-    const body = await response.json();
+        const body = await response.json();
 
-    if (!response.ok) {
-      throw new Error(body.error?.message || `Request failed with status ${response.status}`);
+        if (!response.ok) {
+          const errorData = body.error || { code: 'unknown', message: `Request failed with status ${response.status}` };
+          
+          if (response.status === 401) throw new MontraAuthenticationError(errorData.message);
+          if (response.status === 429) throw new MontraRateLimitError(errorData.message);
+          
+          throw new MontraApiError(response.status, errorData.code, errorData.message, errorData.details);
+        }
+
+        return body as T;
+      } catch (err: any) {
+        lastError = err;
+        // Only retry on transient errors (5xx or network issues)
+        const isTransient = err instanceof MontraApiError ? err.statusCode >= 500 : !(err instanceof MontraError);
+        if (!isTransient || i === retryCount - 1) throw err;
+        
+        // Exponential backoff
+        await new Promise(resolve => setTimeout(resolve, Math.pow(2, i) * 1000));
+      }
     }
-
-    return body as T;
+    throw lastError;
   }
 
   // Customers
-  async createCustomer(data: { name: string; email: string }, options: { idempotencyKey?: string } = {}): Promise<Customer> {
+  async createCustomer(data: CreateCustomerPayload, options: { idempotencyKey?: string } = {}): Promise<Customer> {
     const res = await this.request<ApiResponse<Customer>>('/customers', {
       method: 'POST',
       body: JSON.stringify(data),
@@ -59,9 +111,39 @@ export class Montra {
     return res.data!;
   }
 
+  async getCustomer(id: string): Promise<Customer> {
+    const res = await this.request<ApiResponse<Customer>>(`/customers/${id}`);
+    return res.data!;
+  }
+
+  async updateCustomer(id: string, data: Partial<CreateCustomerPayload>): Promise<Customer> {
+    const res = await this.request<ApiResponse<Customer>>(`/customers/${id}`, {
+      method: 'PATCH',
+      body: JSON.stringify(data),
+    });
+    return res.data!;
+  }
+
   async listCustomers(): Promise<Customer[]> {
     const res = await this.request<ApiResponse<Customer[]>>('/customers');
     return res.data!;
+  }
+
+  // Analytics
+  async getAnalyticsSeries(params: {
+    interval: 'daily' | 'weekly' | 'monthly';
+    points: number;
+    end?: string;
+    product?: string;
+  }): Promise<AnalyticsSeriesResponse> {
+    const sp = new URLSearchParams({
+      interval: params.interval,
+      points: String(params.points),
+      ...(params.end && { end: params.end }),
+      ...(params.product && { product: params.product }),
+    });
+    const res = await this.request<AnalyticsSeriesResponse>(`/analytics/series?${sp.toString()}`);
+    return res;
   }
 
   // Usage
@@ -223,6 +305,16 @@ export class Montra {
   }
 
   // Subscriptions Lifecycle
+  async listSubscriptions(): Promise<Subscription[]> {
+    const res = await this.request<ApiResponse<Subscription[]>>('/subscriptions');
+    return res.data!;
+  }
+
+  async getSubscription(id: string): Promise<Subscription> {
+    const res = await this.request<ApiResponse<Subscription>>(`/subscriptions/${id}`);
+    return res.data!;
+  }
+
   async upgradeSubscription(id: string, data: { new_pricing_model_id: string }, options: { idempotencyKey?: string } = {}): Promise<SubscriptionUpgradeResponse> {
     const res = await this.request<ApiResponse<SubscriptionUpgradeResponse>>(`/subscriptions/${id}/upgrade`, {
       method: 'POST',
@@ -246,19 +338,54 @@ export class Montra {
     return res.data!;
   }
 
-  async pauseSubscription(id: string, options: { idempotencyKey?: string } = {}): Promise<any> {
-    const res = await this.request<ApiResponse<any>>(`/subscriptions/${id}/pause`, {
+  async pauseSubscription(id: string, data?: SubscriptionPausePayload, options: { idempotencyKey?: string } = {}): Promise<Subscription> {
+    const res = await this.request<ApiResponse<Subscription>>(`/subscriptions/${id}/pause`, {
+      method: 'POST',
+      body: data ? JSON.stringify(data) : undefined,
+      idempotencyKey: options.idempotencyKey,
+    });
+    return res.data!;
+  }
+
+  async resumeSubscription(id: string, options: { idempotencyKey?: string } = {}): Promise<Subscription> {
+    const res = await this.request<ApiResponse<Subscription>>(`/subscriptions/${id}/resume`, {
       method: 'POST',
       idempotencyKey: options.idempotencyKey,
     });
     return res.data!;
   }
 
-  async resumeSubscription(id: string, options: { idempotencyKey?: string } = {}): Promise<any> {
-    const res = await this.request<ApiResponse<any>>(`/subscriptions/${id}/resume`, {
+  // Webhooks
+  webhooks = {
+    async verifySignature(payload: string, signature: string, secret: string): Promise<boolean> {
+      try {
+        const crypto = await import('crypto');
+        const hmac = crypto.createHmac('sha256', secret);
+        const digest = hmac.update(payload).digest('hex');
+        return digest === signature;
+      } catch (err) {
+        return false;
+      }
+    }
+  };
+
+  // Workflow Helpers
+  async createCustomerWithSubscription(
+    customerData: CreateCustomerPayload, 
+    pricingModelId: string, 
+    options: { idempotencyKey?: string } = {}
+  ): Promise<{ customer: Customer; subscription: Subscription }> {
+    const customer = await this.createCustomer(customerData, options);
+    // In a real implementation, we'd need a specific endpoint or logic to ensure atomicity
+    // For now, we'll implement it as sequential calls as a "helper"
+    const res = await this.request<ApiResponse<Subscription>>('/subscriptions', {
       method: 'POST',
-      idempotencyKey: options.idempotencyKey,
+      body: JSON.stringify({
+        customer_id: customer.id,
+        pricing_model_id: pricingModelId
+      }),
+      idempotencyKey: options.idempotencyKey ? `${options.idempotencyKey}_sub` : undefined
     });
-    return res.data!;
+    return { customer, subscription: res.data! };
   }
 }
