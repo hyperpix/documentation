@@ -38,6 +38,70 @@ export async function checkAccess(customerId: string) {
   const sso = await montra.checkFeatureAccess(customerId, 'sso');
   return sso.has_access;
 }
+
+// Subscription Management
+export async function manageSubscription(subId: string) {
+  // Pause a subscription
+  await montra.pauseSubscription(subId, {
+    pause_behavior: 'keep_as_is',
+    resume_at: '2025-01-01T00:00:00Z'
+  });
+
+  // Resume immediately
+  await montra.resumeSubscription(subId);
+}
+
+// Analytics & Reporting
+export async function getRevenueReport() {
+  return await montra.getAnalyticsSeries({
+    interval: 'daily',
+    points: 30
+  });
+}
+
+// Webhook Verification
+export async function handleWebhook(payload: string, sig: string) {
+  const isValid = await montra.webhooks.verifySignature(
+    payload, 
+    sig, 
+    process.env.MONTRA_WEBHOOK_SECRET!
+  );
+  return isValid;
+}
+```
+
+### Workflow Helpers
+
+Combine common operations into a single call.
+
+```typescript
+// Create a customer and subscribe them to a plan in one go
+const { customer, subscription } = await montra.createCustomerWithSubscription(
+  {
+    name: 'Jane Doe',
+    email: 'jane@example.com',
+    metadata: { plan: 'pro' }
+  },
+  'pricing_model_id_here'
+);
+```
+
+### Resilient Error Handling
+
+The SDK now includes custom error classes and automatic retries for transient failures.
+
+```typescript
+import { Montra, MontraAuthenticationError, MontraRateLimitError } from '@montra/sdk';
+
+try {
+  await montra.listInvoices();
+} catch (err) {
+  if (err instanceof MontraAuthenticationError) {
+    // Handle invalid API key
+  } else if (err instanceof MontraRateLimitError) {
+    // Handle rate limits
+  }
+}
 ```
 
 ### Express Middleware
