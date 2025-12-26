@@ -17,13 +17,13 @@ Bring the latest billing and reporting capabilities to the SDK surface.
 - [x] Task: Implement Subscription Lifecycle. Write tests and then implement `pause`, `resume`, and `updateSchedule` methods. a5c6a09
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Feature Implementation (Analytics & Subscriptions)' (Protocol in workflow.md) 90b9e45
 
-## Phase 3: Feature Implementation (Customers & Webhooks)
+## Phase 3: Feature Implementation (Customers & Webhooks) [checkpoint: 7eb0209]
 Finalize resource management methods and add critical security utilities.
 
-- [ ] Task: Enhance Customer Management. Write tests and then update customer methods to support multiple invoicing emails and extended metadata.
-- [ ] Task: Implement Webhook Verification. Write tests and then implement `sdk.webhooks.verifySignature` for secure event validation.
-- [ ] Task: Add Workflow Helpers. Implement high-level convenience methods like `sdk.customers.createWithSubscription()`.
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: Feature Implementation (Customers & Webhooks)' (Protocol in workflow.md)
+- [x] Task: Enhance Customer Management. Write tests and then update customer methods to support multiple invoicing emails and extended metadata. a5c6a09
+- [x] Task: Implement Webhook Verification. Write tests and then implement `sdk.webhooks.verifySignature` for secure event validation. a5c6a09
+- [x] Task: Add Workflow Helpers. Implement high-level convenience methods like `sdk.customers.createWithSubscription()`. a5c6a09
+- [x] Task: Conductor - User Manual Verification 'Phase 3: Feature Implementation (Customers & Webhooks)' (Protocol in workflow.md) 7eb0209
 
 ## Phase 4: Documentation & Integration Pass
 Ensure all new features are well-documented and the SDK remains fully compatible.
