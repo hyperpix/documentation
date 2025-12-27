@@ -23,4 +23,12 @@ Goal: Apply blue "Paid" styling across the application.
 - [x] Task: Update `components/invoices/columns.tsx` to use a blue color scheme for the `paid` status badge.
 - [x] Task: Update the public invoice/checkout template to display "Paid" in blue.
 - [x] Task: Verify mobile responsiveness and visual consistency.
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: UI/UX Improvements' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 3: UI/UX Improvements' (Protocol in workflow.md)
+
+## Phase 4: Performance Polish - Pricing Models
+Goal: Improve perceived performance of the Pricing Models page with skeleton loaders.
+
+- [x] Task: Implement `usePricingModels` hook for client-side data fetching.
+- [x] Task: Refactor Pricing Models page to render shell immediately and use skeleton loaders for table rows.
+- [x] Task: Verify that the shell renders instantly and rows show skeletons during load.
+- [x] Task: Conductor - User Manual Verification 'Phase 4: Performance Polish - Pricing Models' (Protocol in workflow.md)
