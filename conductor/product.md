@@ -24,3 +24,4 @@ A specialized Payment Facilitator (PayFac) and billing platform designed specifi
 - **Lifecycle Scheduling:** Advanced support for scheduled plan changes and automated end-of-cycle transitions.
 - **Merchant Audit Logs:** Detailed history of system events and resource modifications for operational transparency.
 - **Customers Analytics:** Dedicated interface for managing and analyzing customer relationships, billing history, and plan assignments.
+- **Automated Invoice Delivery:** Instant PDF generation and email delivery to customers upon invoice creation.
