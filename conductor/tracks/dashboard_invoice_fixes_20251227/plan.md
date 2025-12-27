@@ -1,6 +1,6 @@
 # Plan: Dashboard Fixes and Invoice Automation
 
-## Phase 1: Security Audit and Data Isolation
+## Phase 1: Security Audit and Data Isolation [checkpoint: 45e746c]
 Goal: Fix the cross-tenant data leak in dashboard cards.
 
 - [x] Task: Audit `settlements` and `transactions` RLS policies in Supabase.
@@ -9,7 +9,7 @@ Goal: Fix the cross-tenant data leak in dashboard cards.
 - [x] Task: Verify fix with tests and manual check.
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Security Audit and Data Isolation' (Protocol in workflow.md)
 
-## Phase 2: Invoice Email Automation
+## Phase 2: Invoice Email Automation [checkpoint: 45e746c]
 Goal: Implement PDF upload to Supabase and email delivery via Resend.
 
 - [x] Task: Configure Supabase Storage bucket `invoices` with appropriate RLS.
@@ -18,7 +18,7 @@ Goal: Implement PDF upload to Supabase and email delivery via Resend.
 - [x] Task: Integrate Resend SDK to send invoice emails with PDF links/attachments.
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Invoice Email Automation' (Protocol in workflow.md)
 
-## Phase 3: UI/UX Improvements
+## Phase 3: UI/UX Improvements [checkpoint: 45e746c]
 Goal: Enhance Invoice Table interaction and Dashboard performance.
 
 - [x] Task: Create failing tests for Dashboard caching (verifying second load is faster/from cache).
