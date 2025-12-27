@@ -1,6 +1,6 @@
 # Plan: Center Dashboard Loader & Prevent Scroll
 
-## Phase 1: Loader Centering and Scroll Lock
+## Phase 1: Loader Centering and Scroll Lock [checkpoint: 700afa7]
 Goal: Center the spinner perfectly and lock page scrolling during the initial load.
 
 - [x] Task: Create failing tests to verify that `document.body` style is updated when loading. (Skipped: Project lacks React Testing Library configuration)
