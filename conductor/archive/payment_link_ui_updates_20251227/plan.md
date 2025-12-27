@@ -9,7 +9,7 @@ Goal: Secure inactive links and improve management actions.
 - [x] Task: Update `PaymentLinkActions` component:
     - [x] Add "Delete" item with `AlertDialog`.
     - [x] Remove icons from all dropdown items.
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Status Enforcement and Actions' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Status Enforcement and Actions' (Protocol in workflow.md)
 
 ## Phase 2: Table Interaction [checkpoint: e0476d6]
 Goal: Make the Payment Links table interactive.
@@ -17,11 +17,12 @@ Goal: Make the Payment Links table interactive.
 - [x] Task: Refactor `PaymentLinksClient` to handle `onRowClick` and manage the "Details" dialog state.
 - [x] Task: Update `PaymentLinkDataTable` columns to remove redundant click handlers and ensure actions don't propagate.
 - [x] Task: Verify that clicking a row opens the dialog and clicking actions works independently.
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Table Interaction' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Table Interaction' (Protocol in workflow.md)
 
 ## Phase 3: Dashboard Performance Polish [checkpoint: e0476d6]
 Goal: Improve the perceived performance of the Dashboard entry.
 
 - [x] Task: Implement an immediate suspense boundary or loading state that shows a spinner *before* the dashboard layout fully resolves, ensuring an instant transition feedback loop.
+      *(Note: Achieved by removing server-side blocking prefetch in `app/page.tsx`, allowing the client-side `isLoading` spinner to appear instantly.)*
 - [x] Task: Verify that the loader appears immediately upon navigation to `/`.
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: Dashboard Performance Polish' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 3: Dashboard Performance Polish' (Protocol in workflow.md)
