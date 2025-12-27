@@ -23,7 +23,7 @@
 
 ---
 
-## [~] Track: When an invoice is paid, the status turns into paid (use blue colour) invoice/payment link should turn inactive so others cant pay
+## [x] Track: When an invoice is paid, the status turns into paid (use blue colour) invoice/payment link should turn inactive so others cant pay
 *Link: [./conductor/tracks/invoice_status_lockdown_20251227/](./conductor/tracks/invoice_status_lockdown_20251227/)*
 
 
