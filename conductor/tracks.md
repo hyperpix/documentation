@@ -18,5 +18,33 @@
 
 ---
 
+
+
+
+
+
+
 ## [ ] Track: Dashboard and Analytics UX & Chart Optimization
+
+
+
 *Link: [./conductor/tracks/dashboard_ux_optimization_20251225/](./conductor/tracks/dashboard_ux_optimization_20251225/)*
+
+
+
+
+
+
+
+---
+
+
+
+
+
+
+
+## [~] Track: Dashboard Fixes and Invoice Automation
+*Link: [./conductor/tracks/dashboard_invoice_fixes_20251227/](./conductor/tracks/dashboard_invoice_fixes_20251227/)*
+
+
